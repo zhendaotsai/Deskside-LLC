@@ -476,3 +476,45 @@ section { padding: clamp(72px, 9vw, 120px) 0; }
   .founders-label { flex-basis: 100%; }
   .founder-chip { flex-basis: 100%; }
 }
+
+/* Proactive agents */
+.checks { list-style: none; margin: 28px 0 0; padding: 0; }
+.checks li { position: relative; padding: 12px 0 12px 30px; border-top: 1px solid var(--rule); color: var(--ink-2); font-size: 0.98rem; }
+.checks li::before { content: "✓"; position: absolute; left: 2px; top: 12px; color: var(--accent); font-weight: 600; }
+.checks strong { color: var(--ink); font-weight: 600; }
+
+.feed {
+  background: var(--night); color: var(--night-text); border-radius: 10px; overflow: hidden;
+  box-shadow: 0 30px 60px -30px rgba(15, 23, 32, .55), 0 0 0 1px rgba(15,23,32,.08);
+  align-self: center; min-width: 0;
+}
+.feed .desk-bar { font-family: var(--mono); }
+.feed .desk-bar span::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--term-green); margin-right: 8px; vertical-align: 1px;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 50% { opacity: .3; } }
+.feed-list { list-style: none; margin: 0; padding: 6px 20px 10px; }
+.feed-list li {
+  display: grid; grid-template-columns: 48px 80px 1fr; gap: 6px 12px; align-items: baseline;
+  padding: 14px 0; border-bottom: 1px solid var(--night-rule);
+}
+.feed-list li:last-child { border-bottom: 0; }
+.feed-list time { font-family: var(--mono); font-size: 0.78rem; color: var(--night-muted); }
+.feed-list p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--night-text); }
+.feed-list b { color: #fff; font-weight: 600; }
+.tagx {
+  font-family: var(--mono); font-size: 0.66rem; letter-spacing: .08em; text-transform: uppercase;
+  padding: 2px 7px; border-radius: 3px; border: 1px solid currentColor; white-space: nowrap; justify-self: start;
+}
+.tagx.watch { color: var(--signal); }
+.tagx.data { color: #7fb6ff; }
+.tagx.brief { color: var(--term-green); }
+.tagx.ops { color: #d7a6ff; }
+.tagx.risk { color: #ff9a8a; }
+@media (max-width: 520px) {
+  .feed-list li { grid-template-columns: auto 1fr; }
+  .feed-list p { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) { .feed .desk-bar span::before { animation: none; } }
