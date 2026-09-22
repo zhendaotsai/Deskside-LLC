@@ -7,7 +7,7 @@ A static site with plain HTML, CSS, and a little JS. No build step.
 ```
 index.html      Landing page
 services.html   Services, engagement models, FAQ
-about.html      Story, principles, founders
+about.html      Story, principles, experience
 contact.html    Contact form (opens the visitor's email client)
 assets/         styles.css, main.js, favicon.svg
 ```
@@ -27,9 +27,6 @@ Any static host works: Vercel, Netlify, Cloudflare Pages, or GitHub Pages (Setti
 
 - [ ] Replace `hello@deskside.ai` with your real address (all pages, plus `data-to` on the contact form)
 - [ ] Confirm the location ("New York, NY") in the footer and on the contact page
-- [ ] Check the founder bios in `about.html`: Zhendao's role at Citadel, and who leads what at Deskside
-- [ ] Add founder photos and LinkedIn links (look for the `TODO` in `about.html`)
-- [ ] Make sure it's fine to name Citadel publicly (employment agreements, and whether either founder is still there)
 - [ ] Optional: send the contact form to Formspree or Basin instead of `mailto:`
 - [ ] Optional: add analytics and a social share image (`og:image`)
 

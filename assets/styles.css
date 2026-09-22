@@ -518,3 +518,6 @@ section { padding: clamp(72px, 9vw, 120px) 0; }
   .feed-list p { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) { .feed .desk-bar span::before { animation: none; } }
+.exp-item { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); display: inline-flex; align-items: center; gap: 12px; }
+.exp-item + .exp-item::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+@media (max-width: 560px) { .exp-item + .exp-item::before { display: none; } .exp-item { flex-basis: 100%; } }
