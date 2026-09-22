@@ -27,7 +27,9 @@ Any static host works: Vercel, Netlify, Cloudflare Pages, or GitHub Pages (Setti
 
 - [ ] Replace `hello@deskside.ai` with your real address (all pages, plus `data-to` on the contact form)
 - [ ] Confirm the location ("New York, NY") in the footer and on the contact page
-- [ ] Add founder names, photos, and bios in `about.html` (look for the `TODO`)
+- [ ] Check the founder bios in `about.html`: Zhendao's role at Citadel, and who leads what at Deskside
+- [ ] Add founder photos and LinkedIn links (look for the `TODO` in `about.html`)
+- [ ] Make sure it's fine to name Citadel publicly (employment agreements, and whether either founder is still there)
 - [ ] Optional: send the contact form to Formspree or Basin instead of `mailto:`
 - [ ] Optional: add analytics and a social share image (`og:image`)
 
