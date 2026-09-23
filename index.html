@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deskside — Forward-deployed AI engineers for hedge funds</title>
-  <meta name="description" content="Deskside is a forward-deployed AI engineering firm with decades of combined buy-side experience. We embed with hedge funds and investment firms and ship AI tools into the real workflow of PMs, analysts, quants, and operations teams.">
-  <meta property="og:title" content="Deskside — Forward-deployed AI engineers for hedge funds">
-  <meta property="og:description" content="We sit at your desk, learn your workflow, and ship AI that your investment team actually uses.">
+  <title>Deskside — AI research agents for hedge funds</title>
+  <meta name="description" content="Deskside agents read every filing, broker note, alt-data release, and expert call the moment it lands, compare it with what you already know, and flag what changed for your book. They run inside your environment, and your data stays yours.">
+  <meta property="og:title" content="Deskside — AI research agents for hedge funds">
+  <meta property="og:description" content="Every report read. Every change flagged. Before the open. Private AI research agents that run inside your fund.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts.css">
@@ -25,14 +25,14 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services.html">Solutions</a></li>
         <li><a href="index.html#summaries">Summaries</a></li>
         <li><a href="index.html#examples">Examples</a></li>
         <li><a href="index.html#alt-data">Alt data</a></li>
         <li><a href="index.html#proactive">Agents</a></li>
         <li><a href="index.html#how-we-work">How we work</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="btn btn-primary" href="contact.html">Book a call</a></li>
+        <li><a class="btn btn-primary" href="contact.html">Get a demo</a></li>
       </ul>
     </nav>
   </header>
@@ -43,12 +43,12 @@
       <canvas id="hero-3d" class="hero-3d" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Forward-deployed AI engineers for hedge funds</p>
-          <h1>AI engineers who've <em>already sat at the desk.</em></h1>
-          <p class="lede">Our team brings decades of combined experience across hedge funds, quant research, and engineering. We embed with your investment team, learn how your fund actually works, and ship AI tools into that workflow in weeks, on your infrastructure and under your compliance.</p>
+          <p class="eyebrow">AI research agents for hedge funds</p>
+          <h1>Every report read. Every change flagged. <em>Before the open.</em></h1>
+          <p class="lede">Deskside agents read your filings, broker notes, alt data, and expert calls as they land. They check each one against your model and what you already know, and tell your team what changed and why it matters for the book. They run inside your environment and are live on your coverage in weeks.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">Book an intro call <span class="arrow">→</span></a>
-            <a class="btn btn-ghost" href="services.html">See what we build</a>
+            <a class="btn btn-primary" href="contact.html">See it on your coverage <span class="arrow">→</span></a>
+            <a class="btn btn-ghost" href="#summaries">How it works</a>
           </div>
           <ul class="hero-trust" aria-label="Privacy commitments">
             <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Runs in your environment</li>
@@ -58,21 +58,24 @@
           </ul>
         </div>
 
-        <div class="desk" role="img" aria-label="Illustration: a terminal showing an AI research assistant preparing a morning brief for a portfolio manager">
-          <div class="desk-bar"><i></i><i></i><i></i><span>deskside · research-agent</span></div>
-          <div class="desk-body">
-            <div class="line"><span class="prompt">pm@desk</span> <span class="dim">~</span> $ <span class="hl">brief --book tmt --since close</span></div>
-            <div class="line dim">→ pulling overnight filings, transcripts, broker notes</div>
-            <div class="line"><span class="ok">✓</span> 14 filings parsed  <span class="dim">(8-K ×9, 10-Q ×5)</span></div>
-            <div class="line"><span class="ok">✓</span> 6 earnings calls diffed vs. prior quarter</div>
-            <div class="line"><span class="ok">✓</span> guidance changes flagged on <span class="hl">3</span> positions</div>
-            <div class="line"><span class="ok">✓</span> sources linked · no data leaves your VPC</div>
-            <div class="line"> </div>
-            <div class="line hl">Morning brief ready — 2 items need your eyes:</div>
-            <div class="line">  <span class="prompt">1.</span> Mgmt tone on capex shifted <span class="dim">(call, p.4)</span></div>
-            <div class="line">  <span class="prompt">2.</span> New customer-concentration language <span class="dim">(10-Q)</span></div>
-            <div class="line"> </div>
-            <div class="line"><span class="prompt">pm@desk</span> <span class="dim">~</span> $ <span class="cursor"></span></div>
+        <div class="engine" role="img" aria-label="Illustration: filings, broker notes, alt data, and expert calls flow into the Deskside engine, and flagged insights come out">
+          <div class="desk-bar"><i></i><i></i><i></i><span>deskside · research engine · live</span></div>
+          <div class="engine-stage">
+            <canvas id="engine-3d" aria-hidden="true"></canvas>
+            <ul class="engine-in" aria-hidden="true">
+              <li><i style="background:#c8a24a"></i>Filings</li>
+              <li><i style="background:#7fb6ff"></i>Broker notes</li>
+              <li><i style="background:#6fd3a7"></i>Alt data</li>
+              <li><i style="background:#d7a6ff"></i>Expert calls</li>
+              <li><i style="background:#9aa5b1"></i>News</li>
+            </ul>
+            <ol class="engine-out" aria-live="off">
+              <li class="eo-up"><b>▲ Revised up</b><span>Company A · tracking above consensus</span></li>
+              <li class="eo-tone"><b>↺ Tone shift</b><span>Mgmt language on capex softened</span></li>
+              <li class="eo-data"><b>≠ Sources disagree</b><span>Card panel vs. expert call</span></li>
+              <li class="eo-comp"><b>⚠ Compliance</b><span>Possible MNPI held back</span></li>
+              <li class="eo-up"><b>✓ Brief ready</b><span>3 items need your eyes</span></li>
+            </ol>
           </div>
         </div>
       </div>
@@ -81,12 +84,15 @@
     <!-- Trust: privacy and security -->
     <section class="trust" aria-labelledby="trust-title">
       <div class="container trust-inner">
+        <div class="trust-top">
         <div class="trust-head">
           <svg class="trust-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
           <div>
             <h2 id="trust-title">Your data, your IP, your environment.</h2>
             <p>Everything we build runs inside your walls and stays yours. Privacy and security are written into every contract.</p>
           </div>
+        </div>
+        <div class="enclave" aria-hidden="true"><canvas id="enclave-3d"></canvas><span>your environment</span></div>
         </div>
         <ul class="trust-list">
           <li><strong>Runs in your environment</strong><span>Deployed in your cloud or on-prem. Your data never lands on our systems.</span></li>
@@ -102,7 +108,7 @@
     <!-- Experience strip -->
     <section class="founders-strip" aria-label="Experience">
       <div class="container founders-inner">
-        <p class="founders-label">Decades of combined experience in</p>
+        <p class="founders-label">Built by a team with decades in</p>
         <span class="exp-item">Hedge funds</span>
         <span class="exp-item">Quantitative research</span>
         <span class="exp-item">Production engineering</span>
@@ -114,18 +120,18 @@
       <div class="container split">
         <div class="reveal">
           <p class="eyebrow">Why Deskside</p>
-          <h2>Most AI engineers have never watched a PM's morning.</h2>
-          <p class="lede">Funds don't lack AI vendors. They lack engineers who know what an analyst does before the open, why a quant won't trust a signal without a backtest, and what compliance will ask about first.</p>
-          <p>We've spent decades on the buy side learning exactly that. So we skip the months of learning your business on your dime, and we can start building for the people who'll use the tool every day.</p>
+          <h2>Generic AI doesn't know what your PM needs by 7am.</h2>
+          <p class="lede">Chatbots answer the questions you think to ask. Deskside agents do the reading you don't have time for, check it against your model and your data, and only bring you what changes the picture.</p>
+          <p>Every workflow is designed by a team with decades of buy-side experience. We know what an analyst does before the open, why a quant won't trust a signal without a backtest, and what compliance will ask about first.</p>
         </div>
         <div class="reveal">
-          <div class="contrast-head"><span>Typical approach</span><span>Deskside</span></div>
+          <div class="contrast-head"><span>Typical AI tools</span><span>Deskside</span></div>
           <ul class="contrast-list">
-            <li><span class="them">Months of discovery decks</span><span class="us">Working software in week two</span></li>
-            <li><span class="them">Generic SaaS you adapt to</span><span class="us">Tools built around your process</span></li>
-            <li><span class="them">Your data sent to a vendor</span><span class="us">Deployed inside your environment</span></li>
-            <li><span class="them">Hand-off, then silence</span><span class="us">Your team owns the code and knows how to run it</span></li>
-            <li><span class="them">Engineers learning finance on your dime</span><span class="us">Decades of combined buy-side experience</span></li>
+            <li><span class="them">A chatbot you have to prompt</span><span class="us">Agents that work before you ask</span></li>
+            <li><span class="them">Generic answers</span><span class="us">Framed to your book and coverage</span></li>
+            <li><span class="them">Confident guesses</span><span class="us">Every claim sourced, unverified items flagged</span></li>
+            <li><span class="them">Your data sent to a vendor</span><span class="us">Runs inside your environment</span></li>
+            <li><span class="them">Months of integration</span><span class="us">Live on your coverage in weeks</span></li>
           </ul>
         </div>
       </div>
@@ -525,8 +531,8 @@
     <section id="how-we-work" class="rule-top">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">How we work</p>
-          <h2>Embedded, fast, and built to hand off.</h2>
+          <p class="eyebrow">How we deploy</p>
+          <h2>Live on your desk in weeks, not quarters.</h2>
         </div>
         <ol class="steps reveal">
           <li>
@@ -620,7 +626,7 @@
             <p class="cta-sub">You'll talk to the engineers who'd do the work, not a salesperson. We'll tell you honestly whether AI can help, and where we'd start.</p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="contact.html">Book an intro call <span class="arrow">→</span></a>
+            <a class="btn btn-primary" href="contact.html">See it on your coverage <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -632,12 +638,12 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html"><img class="brand-mark" src="assets/favicon.svg" alt="">Deskside</a>
-          <p style="margin-top:14px;max-width:26em">Forward-deployed AI engineers for hedge funds and investment firms.</p>
+          <p style="margin-top:14px;max-width:26em">Private AI research agents for hedge funds and investment firms.</p>
         </div>
         <div>
           <h4>Company</h4>
           <ul>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html">Solutions</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacy.html">Privacy</a></li>
