@@ -782,3 +782,14 @@ section { padding: clamp(72px, 9vw, 120px) 0; }
 .js-live .lc-say, .js-live .lc-flag { opacity: 0; transform: translateY(6px); transition: opacity .45s ease, transform .45s ease; }
 .js-live .on { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .js-live .lc-say, .js-live .lc-flag { opacity: 1; transform: none; transition: none; } .live-dot::before { animation: none; } }
+
+/* ---------- Legal pages ---------- */
+.legal > * { max-width: 780px; }
+.legal h2 { font-size: 1.5rem; margin: 2.2em 0 0.6em; }
+.legal p, .legal li { color: var(--ink-2); }
+.legal ul { padding-left: 20px; }
+.legal li { margin-bottom: 6px; }
+.legal a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.legal-summary { background: #fbfaf7; border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 8px; padding: 22px 26px; }
+.legal-summary h2 { margin-top: 0; font-size: 1.4rem; }
+.legal-summary ul { margin: 0; }
