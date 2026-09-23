@@ -73,3 +73,21 @@
     });
   }
 })();
+
+// Live call demo: play transcript lines and flags in sequence when scrolled into view.
+(function () {
+  var box = document.querySelector(".live-call");
+  if (!box || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  box.classList.add("js-live");
+  var steps = box.querySelectorAll(".lc-say, .lc-flag");
+  var io = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting) return;
+    io.disconnect();
+    steps.forEach(function (s, i) {
+      var delay = 400 + i * 900 + (s.classList.contains("lc-flag") ? 250 : 0);
+      setTimeout(function () { s.classList.add("on"); }, delay);
+    });
+  }, { threshold: 0.35 });
+  io.observe(box);
+})();
