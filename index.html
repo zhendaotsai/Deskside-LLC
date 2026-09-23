@@ -28,6 +28,7 @@
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#summaries">Summaries</a></li>
         <li><a href="index.html#examples">Examples</a></li>
         <li><a href="index.html#alt-data">Alt data</a></li>
         <li><a href="index.html#proactive">Agents</a></li>
@@ -149,6 +150,78 @@
       </div>
     </section>
 
+    <!-- Report summaries -->
+    <section id="summaries">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Automatic report summaries</p>
+          <h2>Every report read, compared, and <em>summarized for you.</em></h2>
+          <p class="lede">Broker notes, alt-data updates, and expert-call transcripts arrive faster than anyone can read them. Our agents read each one the moment it lands and tell you what changed: which estimates moved, how the tone shifted, and whether it matters for your position.</p>
+        </div>
+
+        <div class="summary-grid reveal">
+          <article class="summary-card" aria-label="Illustrative summary of an incoming research report">
+            <header class="summary-head">
+              <div>
+                <p class="summary-kicker">New report · Company A · Q3 tracking update</p>
+                <h3>Tracking moved from in line to above consensus</h3>
+              </div>
+              <span class="badge badge-up">▲ Revised up</span>
+            </header>
+
+            <div class="summary-block">
+              <h4>Estimate revisions vs. the prior report</h4>
+              <table class="rev-table">
+                <thead><tr><th scope="col">Metric</th><th scope="col">Prior</th><th scope="col">Now</th><th scope="col">Consensus</th><th scope="col">Change</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Revenue growth Y/Y</th><td>+6.1%</td><td>+7.4%</td><td>+6.3%</td><td class="up">▲ 130bp</td></tr>
+                  <tr><th scope="row">Active customers</th><td>+2.0%</td><td>+2.2%</td><td>+2.1%</td><td class="up">▲ 20bp</td></tr>
+                  <tr><th scope="row">Spend per customer</th><td>+4.0%</td><td>+3.6%</td><td>+4.2%</td><td class="down">▼ 40bp</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="summary-block">
+              <h4>Tone inflection</h4>
+              <ul class="tone-list">
+                <li><span class="tone-prior">“demand remains steady”</span><span class="tone-arrow">→</span><span class="tone-now">“demand is accelerating into the quarter”</span></li>
+                <li><span class="tone-prior">“no change to our outlook”</span><span class="tone-arrow">→</span><span class="tone-now">“upside to our prior estimate”</span></li>
+              </ul>
+              <div class="tone-meter" aria-label="Tone moved from neutral to positive">
+                <span class="tone-scale"><span class="tone-from" style="--p:.5"></span><span class="tone-to" style="--p:.74"></span></span>
+                <span class="tone-labels"><span>Cautious</span><span>Neutral</span><span>Positive</span></span>
+              </div>
+            </div>
+
+            <div class="summary-block">
+              <h4>What it means for the book</h4>
+              <p>Supports the long. Growth is running ahead of the Street, but spend per customer slipped for the second report in a row. That's the leg to watch into the print.</p>
+              <p class="summary-meta">Also flagged: the panel was re-based this month, so year-over-year comparisons use the vendor's restated history. Two quotes linked to source.</p>
+            </div>
+          </article>
+
+          <div class="summary-points">
+            <div class="sp">
+              <h3>Revisions, not just readouts</h3>
+              <p>Every new report is lined up against the last one from the same source and against consensus, so you see which way estimates moved, not just where they are.</p>
+            </div>
+            <div class="sp">
+              <h3>Tone and language shifts</h3>
+              <p>Changes in wording like “steady” to “accelerating,” or “in line” to “tracking above” are pulled out side by side. Softening language gets flagged even when the numbers haven't moved yet.</p>
+            </div>
+            <div class="sp">
+              <h3>Across sources, not one at a time</h3>
+              <p>When a broker note, an alt-data update, and an expert call disagree about the same company, the summary says so and shows where each one stands.</p>
+            </div>
+            <div class="sp">
+              <h3>Framed to your positions</h3>
+              <p>Each summary ends with what it means for the book: confirms, cuts against, or doesn't matter. It is delivered to email, chat, or your research notes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Example builds -->
     <section id="examples" class="rule-top">
       <div class="container">
@@ -264,6 +337,80 @@
             </figure>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Illustrative analyses -->
+    <section id="analyses">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Analyses on autopilot</p>
+          <h2>The work a data team would do, <em>rebuilt with every release.</em></h2>
+          <p class="lede">When new panel data lands, the agents rerun the analyses your team relies on and flag what moved. Three examples, shown with synthetic data:</p>
+        </div>
+
+        <div class="viz-grid">
+          <figure class="viz reveal" data-chart="cohort" data-label="Line chart: share of each quarterly acquisition cohort still active by month since first purchase. Newer cohorts retain better.">
+            <figcaption class="viz-head">
+              <span class="viz-kicker">Cohort retention</span>
+              <h3>Newer cohorts are holding on longer</h3>
+              <p>Share of each acquisition cohort still active, by months since first purchase.</p>
+              <ul class="viz-legend">
+                <li><span class="lg-sw" style="background:#86b6ef"></span>Q1 '25</li>
+                <li><span class="lg-sw" style="background:#5598e7"></span>Q2 '25</li>
+                <li><span class="lg-sw" style="background:#2a78d6"></span>Q3 '25</li>
+                <li><span class="lg-sw" style="background:#1c5cab"></span>Q4 '25</li>
+                <li><span class="lg-sw" style="background:#0d366b"></span>Q1 '26</li>
+              </ul>
+            </figcaption>
+            <div class="viz-plot"></div>
+            <p class="viz-read"><strong>What the agent flags:</strong> month-3 retention is up about 4 points across the last four cohorts, so growth is coming from customers who stay, not just new sign-ups.</p>
+            <details class="viz-data"><summary>View data table</summary><div class="viz-table"></div></details>
+          </figure>
+
+          <figure class="viz reveal" data-chart="share" data-label="Stacked columns: monthly market share for two incumbents, a new entrant launching in July 2025, and other players.">
+            <figcaption class="viz-head">
+              <span class="viz-kicker">Market share after a new entrant</span>
+              <h3>Who is the new entrant taking share from?</h3>
+              <p>Share of category spend by month, from a transaction panel.</p>
+              <ul class="viz-legend">
+                <li><span class="lg-sw" style="background:#2a78d6"></span>Incumbent A</li>
+                <li><span class="lg-sw" style="background:#1baf7a"></span>Incumbent B</li>
+                <li><span class="lg-sw" style="background:#eb6834"></span>New entrant</li>
+                <li><span class="lg-sw" style="background:#c9ccd1"></span>Other</li>
+              </ul>
+            </figcaption>
+            <div class="viz-plot"></div>
+            <p class="viz-read"><strong>What the agent flags:</strong> the entrant reached about 11% share within a year, taking roughly 1.6 times as much from Incumbent B as from Incumbent A.</p>
+            <details class="viz-data"><summary>View data table</summary><div class="viz-table"></div></details>
+          </figure>
+
+          <figure class="viz viz-wide reveal" data-chart="forecast" data-label="Line chart: reported quarterly growth, our backtested estimate, and consensus, with three extrapolation methods and a blended estimate for the quarter in progress.">
+            <figcaption class="viz-head">
+              <span class="viz-kicker">Quarterly forecast</span>
+              <h3>Three ways to project the quarter, blended and checked against the Street</h3>
+              <p>Revenue growth year over year. For the quarter in progress, each extrapolation method is shown next to the blended estimate, consensus, and the guidance range.</p>
+              <ul class="viz-legend">
+                <li><span class="lg-sw" style="background:#5b636b"></span>Reported</li>
+                <li><span class="lg-sw" style="background:#2a78d6"></span>Our estimate</li>
+                <li><span class="lg-sw lg-dash" style="border-color:#eb6834"></span>Consensus</li>
+                <li><span class="lg-sw lg-hollow"></span>Extrapolation methods</li>
+                <li><span class="lg-sw" style="background:#d8d3c7"></span>Guidance range</li>
+              </ul>
+            </figcaption>
+            <div class="viz-body">
+              <div class="viz-plot"></div>
+              <aside class="viz-stats" aria-label="Backtest accuracy">
+                <p class="stat-label">Average miss vs. reported, last 10 quarters</p>
+                <div class="stat"><span class="stat-v" data-stat="mae-ours">0.2pp</span><span class="stat-k">Our estimate</span></div>
+                <div class="stat"><span class="stat-v muted" data-stat="mae-cons">0.7pp</span><span class="stat-k">Consensus</span></div>
+                <p class="stat-note">Blended estimate for the quarter in progress: <strong>12.6%</strong>, about 120bp above consensus and above the top of guidance.</p>
+              </aside>
+            </div>
+            <details class="viz-data"><summary>View data table</summary><div class="viz-table"></div></details>
+          </figure>
+        </div>
+        <p class="viz-source">All charts use synthetic data for illustration. No client, vendor, or company data is shown.</p>
       </div>
     </section>
 
@@ -431,6 +578,7 @@
   </footer>
 
   <script src="assets/main.js"></script>
+  <script src="assets/charts.js"></script>
   <script type="module" src="assets/scene.js"></script>
 </body>
 </html>
