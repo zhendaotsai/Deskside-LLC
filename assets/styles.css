@@ -551,3 +551,74 @@ section { padding: clamp(72px, 9vw, 120px) 0; }
 .brief-copy em { font-style: italic; color: var(--ink); }
 @media (max-width: 900px) { .brief-demo { grid-template-columns: 1fr; } .brief-copy { order: -1; } }
 .examples-grid .card .num { margin-bottom: 20px; }
+
+/* ---------- 3D accents ---------- */
+.hero { position: relative; overflow: hidden; }
+.hero > .container { position: relative; z-index: 1; }
+.hero-3d {
+  position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 72%;
+  pointer-events: none; opacity: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 55%);
+          mask-image: linear-gradient(to bottom, transparent 0%, #000 55%);
+  transition: opacity 1.2s ease;
+}
+.has-3d .hero-3d { opacity: .5; }
+@media (max-width: 960px) { .hero-3d { height: 45%; } .has-3d .hero-3d { opacity: .35; } }
+
+/* ---------- Alt-data section ---------- */
+.alt-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(32px, 5vw, 64px); align-items: start; }
+@media (max-width: 980px) { .alt-grid { grid-template-columns: 1fr; } }
+.alt-list { list-style: none; margin: 0; padding: 0; }
+.alt-list li { padding: 20px 0 20px 34px; border-top: 1px solid var(--night-rule); position: relative; }
+.alt-list li:last-child { border-bottom: 1px solid var(--night-rule); }
+.alt-list li::before {
+  content: ""; position: absolute; left: 4px; top: 29px; width: 12px; height: 12px;
+  border: 1.5px solid var(--term-green); transform: rotate(45deg);
+}
+.alt-list h3 { font-size: 1.25rem; margin: 0 0 6px; }
+.alt-list p { margin: 0; color: var(--night-muted); font-size: 0.96rem; }
+
+.alt-visuals { display: grid; gap: 20px; min-width: 0; }
+.viz-card {
+  margin: 0; background: #080d12; border: 1px solid var(--night-rule); border-radius: 10px; overflow: hidden;
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); min-width: 0;
+}
+.viz-card .desk-bar { font-family: var(--mono); }
+.cohort-stage { position: relative; height: clamp(260px, 32vw, 360px); }
+.cohort-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.viz-fallback {
+  position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 24px;
+  text-align: center; color: var(--night-muted); font-size: 0.9rem;
+}
+.has-3d .viz-fallback { display: none; }
+.axis {
+  position: absolute; font-family: var(--mono); font-size: 0.68rem; letter-spacing: .04em;
+  color: var(--night-muted); pointer-events: none;
+}
+.axis-x { right: 16px; bottom: 12px; }
+.axis-z { left: 16px; top: 12px; }
+.viz-card figcaption {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+  padding: 12px 18px 14px; border-top: 1px solid var(--night-rule);
+  font-size: 0.8rem; color: var(--night-muted);
+}
+.key { display: inline-flex; align-items: center; gap: 7px; }
+.swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.sw-hi { background: #6fd3a7; } .sw-lo { background: #1a4d42; } .sw-new { background: var(--signal); }
+
+.tri { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.tri caption { text-align: left; padding: 14px 18px 4px; color: var(--night-muted); font-size: 0.8rem; font-family: var(--mono); }
+.tri th, .tri td { padding: 9px 18px; border-bottom: 1px solid var(--night-rule); text-align: left; font-weight: 400; }
+.tri thead th { font-family: var(--mono); font-size: 0.68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--night-muted); }
+.tri tbody th { color: var(--night-text); }
+.tri td { font-family: var(--mono); color: #fff; white-space: nowrap; width: 1%; }
+.tri .bar-col { width: 45%; }
+.tri .bar { display: block; height: 8px; width: calc(var(--v) * 100%); border-radius: 2px; background: #3b5b6b; }
+.tri .blend th, .tri .blend td { color: var(--term-green); font-weight: 600; }
+.tri .blend .bar { background: var(--term-green); }
+.tri .cons .bar { background: transparent; border: 1px dashed var(--night-muted); height: 8px; }
+.tri-verdict { display: flex; align-items: center; gap: 8px; margin: 0; padding: 12px 18px 14px; font-size: 0.84rem; color: var(--night-text); }
+.tri-verdict .dot { background: var(--term-green); }
+@media (max-width: 520px) { .tri th, .tri td { padding: 8px 12px; } .tri .bar-col { width: 30%; } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

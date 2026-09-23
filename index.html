@@ -29,6 +29,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="services.html">Services</a></li>
         <li><a href="index.html#examples">Examples</a></li>
+        <li><a href="index.html#alt-data">Alt data</a></li>
         <li><a href="index.html#proactive">Agents</a></li>
         <li><a href="index.html#how-we-work">How we work</a></li>
         <li><a href="about.html">About</a></li>
@@ -40,6 +41,7 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero">
+      <canvas id="hero-3d" class="hero-3d" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Forward-deployed AI engineers for hedge funds</p>
@@ -214,6 +216,57 @@
       </div>
     </section>
 
+    <!-- Alt-data agents -->
+    <section id="alt-data" class="band">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Alt-data agents</p>
+          <h2>Every dataset you license, <em>working every day.</em></h2>
+          <p class="lede">Funds pay for card panels, receipt data, app and web traffic, and channel checks. Then analysts have time to open a fraction of it. We build agents that take in every release, check vendors against each other, and turn raw panels into the analysis you'd otherwise wait on a data team for.</p>
+        </div>
+
+        <div class="alt-grid">
+          <ul class="alt-list reveal">
+            <li><h3>Signal triangulation</h3><p>Compare what several vendors say about the same KPI, adjust for each panel's known bias, and flag when they disagree ahead of the print.</p></li>
+            <li><h3>Automated cohort analysis</h3><p>Rebuild retention, repeat-rate, and spend-per-customer curves by acquisition cohort every time new panel data lands.</p></li>
+            <li><h3>Nowcasts vs. consensus</h3><p>Turn panel reads into KPI estimates with backtested error bands, and track the gap to the Street into earnings.</p></li>
+            <li><h3>Panel health checks</h3><p>Catch shrinking panels, merchant drop-outs, methodology changes, and rebases before they show up as a false signal.</p></li>
+            <li><h3>Dataset trials</h3><p>Backtest a new vendor against reported numbers before you sign the contract, not after.</p></li>
+            <li><h3>Point-in-time by default</h3><p>Every series is stored as it was known on the day, so backtests don't quietly peek at the future.</p></li>
+          </ul>
+
+          <div class="alt-visuals reveal">
+            <figure class="viz-card">
+              <div class="desk-bar"><i></i><i></i><i></i><span>cohort-retention · synthetic data</span></div>
+              <div class="cohort-stage">
+                <canvas id="cohort-3d" aria-hidden="true"></canvas>
+                <p class="viz-fallback">Retention by acquisition cohort, rebuilt with every data drop.</p>
+                <span class="axis axis-x">Months since first purchase →</span>
+                <span class="axis axis-z">← Acquisition cohort</span>
+              </div>
+              <figcaption><span class="key"><span class="swatch sw-hi"></span>Higher retention</span><span class="key"><span class="swatch sw-lo"></span>Lower retention</span><span class="key"><span class="swatch sw-new"></span>Newest data point</span></figcaption>
+            </figure>
+
+            <figure class="viz-card tri-card">
+              <div class="desk-bar"><i></i><i></i><i></i><span>signal triangulation · illustrative</span></div>
+              <table class="tri">
+                <caption>Quarter-to-date KPI growth, year over year</caption>
+                <thead><tr><th scope="col">Source</th><th scope="col">Read</th><th scope="col" class="bar-col"><span class="sr-only">Chart</span></th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Card panel</th><td>+4.1%</td><td class="bar-col"><span class="bar" style="--v:.68"></span></td></tr>
+                  <tr><th scope="row">Receipt panel</th><td>+3.4%</td><td class="bar-col"><span class="bar" style="--v:.57"></span></td></tr>
+                  <tr><th scope="row">App activity</th><td>+5.0%</td><td class="bar-col"><span class="bar" style="--v:.83"></span></td></tr>
+                  <tr class="blend"><th scope="row">Bias-adjusted blend</th><td>+4.0%</td><td class="bar-col"><span class="bar" style="--v:.67"></span></td></tr>
+                  <tr class="cons"><th scope="row">Consensus</th><td>+2.8%</td><td class="bar-col"><span class="bar" style="--v:.47"></span></td></tr>
+                </tbody>
+              </table>
+              <p class="tri-verdict"><span class="dot"></span>Sources agree: tracking ~120bp above consensus. Panel health normal.</p>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Proactive agents -->
     <section id="proactive" class="rule-top">
       <div class="container split">
@@ -378,5 +431,6 @@
   </footer>
 
   <script src="assets/main.js"></script>
+  <script type="module" src="assets/scene.js"></script>
 </body>
 </html>

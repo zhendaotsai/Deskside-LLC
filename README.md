@@ -9,7 +9,8 @@ index.html      Landing page
 services.html   Services, engagement models, FAQ
 about.html      Story, principles, experience
 contact.html    Contact form (opens the visitor's email client)
-assets/         styles.css, main.js, favicon.svg
+assets/         styles.css, main.js (UI), scene.js (3D accents), favicon.svg
+assets/vendor/  three.js r169 (MIT), self-hosted
 ```
 
 ## Run locally
