@@ -32,3 +32,15 @@ Any static host works: Vercel, Netlify, Cloudflare Pages, or GitHub Pages (Setti
 - [ ] Optional: add analytics and a social share image (`og:image`)
 
 The header and footer are repeated in each page. If you change one, change them all.
+
+## Brand assets
+
+| File | Use |
+|---|---|
+| `assets/favicon.svg` | Primary mark on a dark tile: favicon, light backgrounds, avatars |
+| `assets/logo-mark.svg` | Mark only, for light backgrounds (no tile) |
+| `assets/logo-mark-dark.svg` | Mark only, for dark backgrounds (no tile) |
+| `assets/apple-touch-icon.png` | 180×180 home-screen icon |
+| `assets/og-image.png` | 1200×630 social share card (LinkedIn, Slack, iMessage) |
+
+The mark is a D-shaped enclave with a data point secured inside, standing for "your data stays inside your walls." Colors: ink `#0f1720`, paper `#f6f4ef`, green `#6fd3a7` / `#1f6f5c`, brass `#c8a24a`. Wordmark: Newsreader SemiBold.
