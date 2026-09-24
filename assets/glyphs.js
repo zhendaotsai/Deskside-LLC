@@ -321,7 +321,9 @@ function makeEnvironment(renderer) {
 
 function init() {
   document.documentElement.classList.add("has-glyphs");
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "low-power" });
+  // preserveDrawingBuffer: Safari/WebKit (every iPhone browser) returns a blank image when copying
+  // a WebGL canvas unless its drawing buffer is kept.
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true, powerPreference: "low-power" });
   renderer.setPixelRatio(1);
   renderer.setSize(MAX, MAX, false);
   renderer.setClearColor(0x000000, 0);
@@ -364,13 +366,28 @@ function init() {
     renderer.render(v.scene, v.camera);
     v.ctx.clearRect(0, 0, w, h);
     v.ctx.drawImage(gl, 0, MAX - h, w, h, 0, 0, w, h);
+    if (!v.drawn) checkCopy(v, w, h);
     v.drawn = true;
+  };
+
+  // Safety net: if the first copy comes out empty (the browser won't copy WebGL pixels),
+  // hide the glyph frames rather than show empty boxes.
+  let verified = false, disabled = false;
+  const checkCopy = (v, w, h) => {
+    if (verified) return;
+    try {
+      const px = v.ctx.getImageData(0, 0, w, h).data;
+      for (let i = 3; i < px.length; i += 16) if (px[i] > 0) { verified = true; return; }
+    } catch (e) { /* unreadable: assume it drew */ verified = true; return; }
+    disabled = true;
+    document.documentElement.classList.remove("has-glyphs");
   };
 
   let raf = 0;
   const t0 = performance.now();
   const loop = (now) => {
     raf = 0;
+    if (disabled) return;
     const t = reduced ? 1 : (now - t0) / 1000;
     let any = false;
     for (const v of views) {
