@@ -1,0 +1,65 @@
+# Deskside — working notes for Claude (and humans)
+
+Deskside builds private AI research agents for hedge funds and other buy-side firms, deployed inside the client's own environment by a small senior team. This repo is the marketing site at **https://desksidelabs.com** plus draft legal documents.
+
+Read this before changing anything. If a request conflicts with a rule below, say so and ask.
+
+## Repo map
+
+```
+index.html, services.html, about.html, contact.html, privacy.html, terms.html   pages (plain HTML)
+assets/styles.css      all styles (one file, CSS custom properties on :root)
+assets/main.js         nav, reveal-on-scroll, contact form, hero/insight card cycling
+assets/scene.js        3D scenes (three.js, self-hosted in assets/vendor/)
+assets/charts.js       illustrative SVG charts (synthetic data only)
+assets/fonts/          self-hosted fonts (Inter, Newsreader, JetBrains Mono)
+legal/                 DRAFT client contract (MSA) + notes for counsel — not published
+scripts/check.py       pre-merge checks (run before every PR)
+```
+
+No build step, no package manager. The header nav and footer are repeated in every page — change them everywhere (the check script enforces the nav).
+
+## Run and check
+
+```sh
+python3 -m http.server 8000        # then open http://localhost:8000
+python3 scripts/check.py           # must pass before merging
+```
+
+Also look at the change at desktop (~1440px) and phone (~390px) widths, and check the browser console for errors. Pages must not scroll sideways on a phone.
+
+## Deploy
+
+Vercel project `deskside-llc` (team "zhendaotsai's projects") auto-deploys the production branch on every push; every pull request gets a preview URL. DNS is on Cloudflare (records must be **DNS only**, not proxied). Email for `hello@desksidelabs.com` is Cloudflare Email Routing.
+
+## Rules that must not be broken
+
+**Confidentiality**
+- Never name either founder's current or former employer, or internal project names, anywhere public. No founder names on the site for now.
+- Never use or quote real positions, tickers from a real book, licensed vendor reports, or employer material. Do not name research vendors whose reports we studied privately (the check script has the list).
+- All data in charts and demos is synthetic and labelled as such. Use generic names ("Company A", "Incumbent B").
+
+**Privacy promise** (this is the core of the pitch)
+- The site loads nothing from third parties: no Google Fonts, CDNs, analytics, pixels, embeds or form services. Self-host everything. If that ever changes, update `privacy.html` first.
+- Every privacy claim on the site must match the contract (`legal/master-services-agreement.md`, Section 4): runs in the client's environment by default, never used to train models, never shared across clients, client owns what we build, returned/deleted with written certification at the end.
+
+**Regulatory**
+- Deskside is a technology vendor, not an investment adviser. No buy/sell recommendations or performance claims. No fake stats, testimonials or client logos.
+
+## Voice and design
+
+- Plain English for skeptical, busy finance readers. Specific over impressive. No hype words (unlock, empower, seamless, revolutionize, cutting-edge), no "not just X, it's Y", go easy on em dashes.
+- Current headline: "Know what changed, and why it matters to your book." Positioning: we connect the research a fund already pays for to its own notes, models and positions — partner with data vendors, don't compete with them.
+- Brand: ink `#0f1720`, paper `#f6f4ef`, green `#6fd3a7` / `#1f6f5c`, brass `#c8a24a`; Newsreader (headings), Inter (body), JetBrains Mono (labels). Logo is the "Enclave" mark in `assets/favicon.svg`.
+- Charts: follow a validated, colorblind-safe palette; every chart has a legend, hover values, and a "View data table" option.
+- 3D scenes pause off-screen, respect `prefers-reduced-motion`, and the page must work without WebGL.
+
+## Git workflow
+
+See `CONTRIBUTING.md`. Short version: branch from `main`, open a pull request, check the Vercel preview, run `scripts/check.py`, merge. Never push directly to `main`.
+
+## Open decisions (don't assume — ask)
+
+- Whether to say "forward-deployed engineers" on the homepage (as the delivery model) alongside the product-led headline.
+- Entity: Delaware C-corp vs Canadian corporation (depends on where founders are resident).
+- Vercel is on the Hobby plan, which is non-commercial; upgrade to Pro before selling.

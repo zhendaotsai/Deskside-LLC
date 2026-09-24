@@ -1,37 +1,40 @@
 # Deskside
 
-Marketing site for Deskside LLC (desksidelabs.com): forward-deployed AI engineers for hedge funds and investment firms.
+Marketing site for Deskside (**https://desksidelabs.com**): private AI research agents for hedge funds and other buy-side firms, deployed inside the client's environment.
 
-A static site with plain HTML, CSS, and a little JS. No build step.
+A static site: plain HTML, CSS and a little JS. No build step, no dependencies to install.
 
 ```
-index.html      Landing page
-services.html   Services, engagement models, FAQ
-about.html      Story, principles, experience
-contact.html    Contact form (opens the visitor's email client)
-assets/         styles.css, main.js (UI), scene.js (3D accents), favicon.svg
-assets/vendor/  three.js r169 (MIT), self-hosted
+index.html          Landing page
+services.html       Solutions, engagement models, FAQ
+about.html          Story, principles, experience
+contact.html        Contact form (opens the visitor's email client)
+privacy.html        Privacy policy
+terms.html          Website terms of use
+assets/             styles.css, main.js (UI), scene.js (3D), charts.js (illustrative charts), fonts, logos
+assets/vendor/      three.js r169 (MIT), self-hosted
+legal/              Draft client contract and notes for counsel (not published on the site)
+scripts/check.py    Pre-merge checks
 ```
 
-## Run locally
+**Start here:** `CLAUDE.md` (rules and context) and `CONTRIBUTING.md` (how we branch, review and merge).
+
+## Run and check locally
 
 ```sh
-python3 -m http.server 8000
-# open http://localhost:8000
+python3 -m http.server 8000     # open http://localhost:8000
+python3 scripts/check.py        # broken links, third-party loads, banned names, nav consistency
 ```
 
-## Deploy
+## Hosting
 
-Any static host works: Vercel, Netlify, Cloudflare Pages, or GitHub Pages (Settings → Pages → deploy from branch, root).
+| What | Where |
+|---|---|
+| Site | Vercel project `deskside-llc`; deploys the production branch on every push; previews on every PR |
+| Domain | `desksidelabs.com` registered on Cloudflare; DNS records set to **DNS only** (not proxied) |
+| Email | `hello@desksidelabs.com` via Cloudflare Email Routing |
 
-## Before launch
-
-- [ ] Register `desksidelabs.com` and set up the `hello@desksidelabs.com` mailbox (Google Workspace, Fastmail, or a forwarder)
-- [ ] Confirm the location ("New York, NY") in the footer and on the contact page
-- [ ] Optional: send the contact form to Formspree or Basin instead of `mailto:`
-- [ ] Optional: add analytics and a social share image (`og:image`)
-
-The header and footer are repeated in each page. If you change one, change them all.
+Vercel's Hobby plan is non-commercial; move to Pro before taking clients.
 
 ## Brand assets
 
