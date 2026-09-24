@@ -779,3 +779,49 @@ section { padding: clamp(72px, 9vw, 120px) 0; }
 .demo-head { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; margin-bottom: clamp(40px, 5vw, 64px); }
 .demo-head .section-head { margin-bottom: 0; }
 @media (max-width: 960px) { .demo-head { grid-template-columns: 1fr; } }
+
+/* ---------- Glyphs: small frosted 3D objects in corner-bracket frames ---------- */
+.glyph-canvas { position: fixed; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; z-index: 40; }
+.glyph {
+  --bk: rgba(15, 23, 32, .32);
+  position: relative; display: none; width: 72px; aspect-ratio: 1; flex: none;
+  background:
+    linear-gradient(var(--bk), var(--bk)) left top / 10px 1px no-repeat,
+    linear-gradient(var(--bk), var(--bk)) left top / 1px 10px no-repeat,
+    linear-gradient(var(--bk), var(--bk)) right top / 10px 1px no-repeat,
+    linear-gradient(var(--bk), var(--bk)) right top / 1px 10px no-repeat,
+    linear-gradient(var(--bk), var(--bk)) left bottom / 10px 1px no-repeat,
+    linear-gradient(var(--bk), var(--bk)) left bottom / 1px 10px no-repeat,
+    linear-gradient(var(--bk), var(--bk)) right bottom / 10px 1px no-repeat,
+    linear-gradient(var(--bk), var(--bk)) right bottom / 1px 10px no-repeat;
+}
+.has-glyphs .glyph { display: block; }
+.band .glyph, .site-footer .glyph { --bk: rgba(216, 222, 228, .3); }
+.glyph-sm { width: 60px; }
+.glyph-xs { width: 44px; background: none; }
+.glyph-md { width: 120px; }
+.glyph-lg { width: clamp(150px, 20vw, 250px); }
+
+/* Glyph placements (layout only switches on when glyphs are drawn) */
+.has-glyphs .sp-g { display: grid; grid-template-columns: auto 1fr; column-gap: 18px; align-items: start; }
+.has-glyphs .sp-g .glyph { grid-row: span 2; }
+.alt-list dt .glyph { margin-bottom: 12px; }
+.step-when { display: flex; flex-direction: column; gap: 14px; }
+.strat-name { display: flex; align-items: center; gap: 12px; }
+.model .glyph { margin-bottom: 18px; }
+.service .glyph-md { margin-top: 20px; }
+.principle .glyph { margin-bottom: 14px; }
+.page-head-grid { display: grid; grid-template-columns: 1fr auto; gap: clamp(24px, 5vw, 72px); align-items: center; }
+@media (max-width: 720px) { .page-head-grid { grid-template-columns: 1fr; } .page-head-grid .glyph-lg { width: 140px; } }
+
+/* Reference-style atmosphere: teal-to-ink gradient band, faint dotted arcs */
+.band-grad { background: linear-gradient(180deg, #2f4a46 0%, #142024 42%, var(--night) 100%); }
+.page-head, .cta { position: relative; overflow: hidden; }
+.page-head::before, .cta::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(15, 23, 32, .16) 1px, transparent 1.5px);
+  background-size: 13px 13px;
+  -webkit-mask-image: radial-gradient(ellipse 55% 85% at 88% 100%, #000 0%, transparent 70%);
+          mask-image: radial-gradient(ellipse 55% 85% at 88% 100%, #000 0%, transparent 70%);
+}
+.page-head > .container, .cta > .container { position: relative; }

@@ -11,6 +11,7 @@ index.html, services.html, security.html, about.html, contact.html, privacy.html
 assets/styles.css      all styles (one file, CSS custom properties on :root)
 assets/main.js         nav, reveal-on-scroll, contact form, live-call demo, hero brief cycling
 assets/scene.js        3D scenes: hero background field, coverage bars, research engine, cohort surface, enclave (three.js, self-hosted in assets/vendor/)
+assets/glyphs.js       small frosted 3D objects in corner-bracket frames: any element with data-glyph="name" (one shared canvas)
 assets/charts.js       illustrative SVG charts (synthetic data only)
 assets/fonts/          self-hosted fonts (IBM Plex Sans, IBM Plex Mono, Newsreader)
 legal/                 DRAFT client contract (MSA) + notes for counsel — not published
@@ -54,7 +55,7 @@ Vercel project `deskside-llc` (team "zhendaotsai's projects") auto-deploys the p
 - Demos are the proof: pre-open brief, transcript diff, redacted MNPI flag, sample deletion certificate. No case study or numbers from a client until a real, approved one exists.
 - Brand: ink `#0f1720`, paper `#f6f4ef`, green `#6fd3a7` / `#1f6f5c`, brass `#c8a24a`; Newsreader (headings), IBM Plex Sans (body), IBM Plex Mono (labels). Logo is the "Enclave" mark in `assets/favicon.svg`.
 - Charts: follow a validated, colorblind-safe palette; every chart has a legend, hover values, and a "View data table" option.
-- 3D is part of the brand (founder decision, 2026-09-24): hero background field, coverage bars in the brief, research engine by the demos, cohort surface in alt data, enclave in security. New 3D should tie to something real where possible. All scenes pause off-screen, respect `prefers-reduced-motion`, and the page works without WebGL.
+- 3D is part of the brand (founder decision, 2026-09-24): hero background field, coverage bars in the brief, research engine by the demos, cohort surface in alt data, enclave in security, plus small frosted "glyphs" in corner-bracket frames beside list items (see `assets/glyphs.js`; keep one meaning per object, e.g. lattice = research you license, orbit = your book, tray = delivery, stack = credit). Keep motion slow and subtle. New 3D should tie to something real where possible. All scenes pause off-screen, respect `prefers-reduced-motion`, and the page works without WebGL.
 - Avoid the "AI template" look: at most one mono all-caps eyebrow (the hero), italic accent only in the hero H1, no three-dot window bars or symbol bullets, no fade-in on every block, no invented metrics (e.g. backtest accuracy), no "not X, it's Y" lines.
 
 ## Git workflow

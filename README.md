@@ -12,7 +12,7 @@ about.html          Story, principles, experience
 contact.html        Contact form (opens the visitor's email client)
 privacy.html        Privacy policy
 terms.html          Website terms of use
-assets/             styles.css, main.js (UI), scene.js (3D), charts.js (illustrative charts), fonts, logos
+assets/             styles.css, main.js (UI), scene.js (3D scenes), glyphs.js (small 3D objects), charts.js (illustrative charts), fonts, logos
 assets/vendor/      three.js r169 (MIT), self-hosted
 legal/              Draft client contract and notes for counsel (not published on the site)
 scripts/check.py    Pre-merge checks
