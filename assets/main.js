@@ -126,3 +126,22 @@
   focus(0);
   if (!reduced) timer = setInterval(function () { focus((active + 1) % items.length); }, 4000);
 })();
+// Research engine (demos section): cycle the output flag cards.
+(function () {
+  var items = document.querySelectorAll(".engine-out li");
+  if (!items.length) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    items[0].classList.add("on"); items[1].classList.add("on");
+    return;
+  }
+  var i = 0;
+  function step() {
+    var prev = (i + items.length - 1) % items.length, wide = window.innerWidth > 560;
+    items.forEach(function (li, k) { li.classList.toggle("on", k === i || (wide && k === prev)); });
+    // newest card on top
+    if (wide && items[i].parentNode.firstElementChild !== items[i]) items[i].parentNode.insertBefore(items[i], items[i].parentNode.firstElementChild);
+    i = (i + 1) % items.length;
+  }
+  step();
+  setInterval(step, 1800);
+})();

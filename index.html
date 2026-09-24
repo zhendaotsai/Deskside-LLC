@@ -43,6 +43,7 @@
   <main id="main">
     <!-- Hero: the product, as the analyst sees it -->
     <section class="hero">
+      <canvas id="hero-3d" class="hero-3d" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Forward-deployed engineers for buy-side research desks</p>
@@ -84,9 +85,31 @@
     <!-- Demo 1: earnings-call diff + broker note -->
     <section id="demos" class="rule-top">
       <div class="container">
-        <div class="section-head">
-          <h2>Earnings calls, read against last quarter.</h2>
-          <p class="lede">Each transcript is lined up with the prior one from the same company. Numbers that moved, words that softened and lines that quietly disappeared are pulled out and tied to your position, minutes after the call ends.</p>
+        <div class="demo-head">
+          <div class="section-head">
+            <h2>Earnings calls, read against last quarter.</h2>
+            <p class="lede">Each transcript is lined up with the prior one from the same company. Numbers that moved, words that softened and lines that quietly disappeared are pulled out and tied to your position, minutes after the call ends.</p>
+          </div>
+          <div class="engine panel-dark" role="img" aria-label="Illustration: filings, broker notes, alt data, expert calls and news flow into the agents, and flags come out">
+            <header class="panel-head"><span>Research agents · overnight run</span><span>your cloud</span></header>
+            <div class="engine-stage">
+              <canvas id="engine-3d" aria-hidden="true"></canvas>
+              <ul class="engine-in" aria-hidden="true">
+                <li><i style="background:#c8a24a"></i>Filings</li>
+                <li><i style="background:#7fb6ff"></i>Broker notes</li>
+                <li><i style="background:#6fd3a7"></i>Alt data</li>
+                <li><i style="background:#d7a6ff"></i>Expert calls</li>
+                <li><i style="background:#9aa5b1"></i>News</li>
+              </ul>
+              <ol class="engine-out" aria-hidden="true">
+                <li class="eo-up"><b>Revised up</b><span>Company B · tracking above consensus</span></li>
+                <li class="eo-tone"><b>Tone shift</b><span>Company A · outlook language softened</span></li>
+                <li class="eo-data"><b>Sources disagree</b><span>Card panel vs. expert call</span></li>
+                <li class="eo-comp"><b>Compliance</b><span>Possible MNPI held back</span></li>
+                <li class="eo-up"><b>Brief ready</b><span>3 of 38 names need your eyes</span></li>
+              </ol>
+            </div>
+          </div>
         </div>
 
         <div class="demo-grid">
@@ -213,6 +236,7 @@
             <div><dt>Dataset trials</dt><dd>A new vendor is tested against reported numbers before you sign the contract.</dd></div>
           </dl>
 
+<div class="alt-visuals">
           <figure class="panel tri-card reveal">
             <header class="panel-head"><span>Company B · quarter-to-date KPI growth, Y/Y</span><span>synthetic</span></header>
             <table class="tri">
@@ -228,6 +252,17 @@
             </table>
             <figcaption class="panel-foot">Sources agree: tracking about 120bp above consensus. Panel health normal.</figcaption>
           </figure>
+          <figure class="viz-card panel-dark">
+            <header class="panel-head"><span>Cohort retention, rebuilt with each data drop</span><span>synthetic</span></header>
+            <div class="cohort-stage">
+              <canvas id="cohort-3d" aria-hidden="true"></canvas>
+              <p class="viz-fallback">Retention by acquisition cohort, rebuilt with every data drop.</p>
+              <span class="axis axis-x">Months since first purchase →</span>
+              <span class="axis axis-z">← Acquisition cohort</span>
+            </div>
+            <figcaption><span class="key"><span class="swatch sw-hi"></span>Higher retention</span><span class="key"><span class="swatch sw-lo"></span>Lower retention</span><span class="key"><span class="swatch sw-new"></span>Newest month of data</span></figcaption>
+          </figure>
+          </div>
         </div>
 
         <div class="viz-grid">
@@ -274,7 +309,10 @@
     <section id="security" class="band">
       <div class="container security-grid">
         <div>
-          <h2>Where your data goes.</h2>
+          <div class="sec-head">
+            <h2>Where your data goes.</h2>
+            <div class="enclave" aria-hidden="true"><canvas id="enclave-3d"></canvas><span>your environment</span></div>
+          </div>
           <p class="lede">Into your own cloud account, and no further than you approve. Each line below is a term in our client agreement.</p>
           <ul class="terms-list">
             <li><strong>Runs in your environment.</strong> We build and run everything in your cloud or on-prem. No copies on our systems unless you approve one in writing for a specific task.</li>
