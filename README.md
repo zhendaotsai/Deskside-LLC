@@ -1,12 +1,13 @@
 # Deskside
 
-Marketing site for Deskside (**https://desksidelabs.com**): private AI research agents for hedge funds and other buy-side firms, deployed inside the client's environment.
+Marketing site for Deskside (**https://desksidelabs.com**): forward-deployed engineers who build private AI research agents for buy-side research desks, inside the client's own cloud.
 
 A static site: plain HTML, CSS and a little JS. No build step, no dependencies to install.
 
 ```
-index.html          Landing page
-services.html       Solutions, engagement models, FAQ
+index.html          Landing page: pre-open brief, transcript diff, live-call flags, alt data, data flow
+services.html       What we build: common core, strategy packs, engagements, FAQ
+security.html       Data-handling commitments (mapped to MSA §4) and a sample deletion certificate
 about.html          Story, principles, experience
 contact.html        Contact form (opens the visitor's email client)
 privacy.html        Privacy policy

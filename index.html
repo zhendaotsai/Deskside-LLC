@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deskside — AI research agents for hedge funds</title>
-  <meta name="description" content="Deskside connects the research a fund already pays for, including broker notes, alt data, expert calls, and filings, to its own notes, models, and positions. Private AI agents flag what changed and why it matters, running entirely inside your environment.">
-  <meta property="og:title" content="Deskside — AI research agents for hedge funds">
-  <meta property="og:description" content="Know what changed, and why it matters to your book. Private AI research agents that run inside your fund.">
+  <title>Deskside | Forward-deployed engineers for buy-side research desks</title>
+  <meta name="description" content="Deskside's engineers sit with your research team, then build private AI agents inside your own cloud. They read the research you already pay for and tell each analyst what changed on their names, in the inbox, notes and spreadsheets the team already uses.">
+  <meta property="og:title" content="Deskside | Forward-deployed engineers for buy-side research desks">
+  <meta property="og:description" content="Know what changed, and why it matters to your book. Private research agents, built at your desk and run in your cloud.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://desksidelabs.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -31,414 +31,203 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="services.html">Solutions</a></li>
-        <li><a href="index.html#summaries">Summaries</a></li>
-        <li><a href="index.html#examples">Examples</a></li>
-        <li><a href="index.html#alt-data">Alt data</a></li>
-        <li><a href="index.html#proactive">Agents</a></li>
-        <li><a href="index.html#how-we-work">How we work</a></li>
+        <li><a href="services.html">What we build</a></li>
+        <li><a href="index.html#demos">Demos</a></li>
+        <li><a href="security.html">Security</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="btn btn-primary" href="contact.html">Get a demo</a></li>
+        <li><a class="btn btn-primary" href="contact.html">Book a call</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <!-- Hero -->
+    <!-- Hero: the product, as the analyst sees it -->
     <section class="hero">
-      <canvas id="hero-3d" class="hero-3d" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Private AI research agents for hedge funds</p>
+          <p class="eyebrow">Forward-deployed engineers for buy-side research desks</p>
           <h1>Know what changed, <em>and why it matters to your book.</em></h1>
-          <p class="lede">Deskside connects the research you already pay for, including broker notes, alt data, expert calls, and filings, to your own notes, models, and positions. Agents watch all of it, compare every update with what you already know, and tell your team what changed. Everything runs inside your environment.</p>
+          <p class="lede">We sit with your research team, then build private agents in your own cloud. They read the broker notes, filings, transcripts and alt data you already pay for, and tell each analyst what moved on their names before the open.</p>
+          <p class="hero-sub">No new platform to learn. Results arrive in the inbox, notes and spreadsheets your team already uses.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">See it on your coverage <span class="arrow">→</span></a>
-            <a class="btn btn-ghost" href="#summaries">How it works</a>
+            <a class="btn btn-primary" href="contact.html">Book a call <span class="arrow">→</span></a>
+            <a class="btn btn-ghost" href="#demos">See the demos</a>
           </div>
-          <ul class="hero-trust" aria-label="Privacy commitments">
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Runs in your environment</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/></svg>Never used to train models</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/></svg>Never shared across clients</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>You own everything we build</li>
-          </ul>
         </div>
 
-        <div class="engine" role="img" aria-label="Illustration: filings, broker notes, alt data, and expert calls flow into the Deskside engine, and flagged insights come out">
-          <div class="desk-bar"><i></i><i></i><i></i><span>deskside · research engine · live</span></div>
-          <div class="engine-stage">
-            <canvas id="engine-3d" aria-hidden="true"></canvas>
-            <ul class="engine-in" aria-hidden="true">
-              <li><i style="background:#c8a24a"></i>Filings</li>
-              <li><i style="background:#7fb6ff"></i>Broker notes</li>
-              <li><i style="background:#6fd3a7"></i>Alt data</li>
-              <li><i style="background:#d7a6ff"></i>Expert calls</li>
-              <li><i style="background:#9aa5b1"></i>News</li>
-            </ul>
-            <ol class="engine-out" aria-live="off">
-              <li class="eo-up"><b>▲ Revised up</b><span>Company A · tracking above consensus</span></li>
-              <li class="eo-tone"><b>↺ Tone shift</b><span>Mgmt language on capex softened</span></li>
-              <li class="eo-data"><b>≠ Sources disagree</b><span>Card panel vs. expert call</span></li>
-              <li class="eo-comp"><b>⚠ Compliance</b><span>Possible MNPI held back</span></li>
-              <li class="eo-up"><b>✓ Brief ready</b><span>3 items need your eyes</span></li>
+        <article class="mail" aria-label="Example pre-open brief, synthetic">
+          <header class="mail-head">
+            <dl>
+              <div><dt>From</dt><dd>Deskside agent, running in your cloud</dd></div>
+              <div><dt>To</dt><dd>Consumer coverage</dd></div>
+              <div><dt>Sent</dt><dd>06:40</dd></div>
+            </dl>
+            <p class="mail-subj">Pre-open: 3 of 38 names need your eyes</p>
+          </header>
+          <div class="coverage" aria-hidden="true">
+            <canvas id="coverage-3d"></canvas>
+            <div class="coverage-flat"></div>
+            <span class="coverage-label">Overnight change score, one bar per name</span>
+          </div>
+          <ol class="mail-items">
+            <li class="mi" data-i="0"><span class="mi-tag t-filing">Filing</span><div><p class="mi-name">Company A <span>long, top 10</span></p><p>8-K at 05:42: the CFO is leaving. Guidance is not changed in the filing. Last quarter's call, where the CFO set out the margin plan, is linked.</p></div></li>
+            <li class="mi" data-i="1"><span class="mi-tag t-est">Estimate</span><div><p class="mi-name">Company B <span>long</span></p><p>Broker note moved Q3 tracking from in line to above consensus. Spend per customer slipped for a second report running, so that is the leg to watch.</p></div></li>
+            <li class="mi" data-i="2"><span class="mi-tag t-data">Data</span><div><p class="mi-name">Company C <span>short</span></p><p>Card panel arrived with 18% fewer merchants than usual. Signal refresh paused until the vendor confirms.</p></div></li>
+          </ol>
+          <p class="mail-held"><b>Left out:</b> a news-feed report of an upgrade on Company D. The broker's own note doesn't show it.</p>
+          <p class="mail-foot">35 other names checked. Nothing material since yesterday.</p>
+        </article>
+      </div>
+      <p class="container hero-note">Synthetic example. Company names are placeholders.</p>
+    </section>
+
+    <!-- Demo 1: earnings-call diff + broker note -->
+    <section id="demos" class="rule-top">
+      <div class="container">
+        <div class="section-head">
+          <h2>Earnings calls, read against last quarter.</h2>
+          <p class="lede">Each transcript is lined up with the prior one from the same company. Numbers that moved, words that softened and lines that quietly disappeared are pulled out and tied to your position, minutes after the call ends.</p>
+        </div>
+
+        <div class="demo-grid">
+          <article class="panel diff-card reveal" aria-label="Synthetic example: transcript comparison">
+            <header class="panel-head"><span>Company A · Q3 prepared remarks vs. Q2</span><span>ready 11 min after the call</span></header>
+            <ol class="diff">
+              <li>
+                <p>“We expect demand to remain <del>strong</del> <ins>resilient</ins> through the second half<ins>, with some variability by region</ins>.”</p>
+                <p class="d-note">Softer word. Regional variability is new this quarter.</p>
+              </li>
+              <li>
+                <p>“We are <del>reaffirming</del> <ins>updating</ins> our full-year outlook<ins> to reflect current trends</ins>.”</p>
+                <p class="d-note">The guidance numbers held. The verb changed.</p>
+              </li>
+              <li class="d-gone">
+                <p><del>“Pricing continues to be a tailwind for the business.”</del></p>
+                <p class="d-note">Dropped. This line was in the last four sets of remarks.</p>
+              </li>
+              <li class="d-new">
+                <p><ins>“We are reviewing our cost structure across the organization.”</ins></p>
+                <p class="d-note">New. First mention of costs in six quarters.</p>
+              </li>
             </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trust: privacy and security -->
-    <section class="trust" aria-labelledby="trust-title">
-      <div class="container trust-inner">
-        <div class="trust-top">
-        <div class="trust-head">
-          <svg class="trust-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
-          <div>
-            <h2 id="trust-title">Your data, your IP, your environment.</h2>
-            <p>Everything we build runs inside your walls and stays yours. Privacy and security are written into every contract.</p>
-          </div>
-        </div>
-        <div class="enclave" aria-hidden="true"><canvas id="enclave-3d"></canvas><span>your environment</span></div>
-        </div>
-        <ul class="trust-list">
-          <li><strong>Runs in your environment</strong><span>Deployed in your cloud or on-prem. Your data never lands on our systems.</span></li>
-          <li><strong>Never used to train models</strong><span>Not ours, not anyone's. AI providers are used only on no-training, zero-retention terms.</span></li>
-          <li><strong>Never shared across clients</strong><span>Strict information barriers. Nothing from your fund is ever used for another.</span></li>
-          <li><strong>You own what we build</strong><span>Code, prompts, outputs, and data are all yours, with full handoff and no lock-in.</span></li>
-          <li><strong>Deleted when we're done</strong><span>Returned and deleted at the end of the engagement, with written certification.</span></li>
-        </ul>
-        <a class="trust-link" href="privacy.html">Read our privacy commitments <span class="arrow">→</span></a>
-      </div>
-    </section>
-
-    <!-- Experience strip -->
-    <section class="founders-strip" aria-label="Experience">
-      <div class="container founders-inner">
-        <p class="founders-label">Built by a team with decades in</p>
-        <span class="exp-item">Hedge funds</span>
-        <span class="exp-item">Quantitative research</span>
-        <span class="exp-item">Production engineering</span>
-      </div>
-    </section>
-
-    <!-- Thesis -->
-    <section class="rule-top">
-      <div class="container split">
-        <div class="reveal">
-          <p class="eyebrow">Why Deskside</p>
-          <h2>Generic AI doesn't know what your PM needs by 7am.</h2>
-          <p class="lede">Chatbots answer the questions you think to ask. Deskside agents do the reading you don't have time for, check it against your model and your data, and only bring you what changes the picture.</p>
-          <p>Every workflow is designed by a team with decades of buy-side experience. We know what an analyst does before the open, why a quant won't trust a signal without a backtest, and what compliance will ask about first.</p>
-        </div>
-        <div class="reveal">
-          <div class="contrast-head"><span>Typical AI tools</span><span>Deskside</span></div>
-          <ul class="contrast-list">
-            <li><span class="them">A chatbot you have to prompt</span><span class="us">Agents that work before you ask</span></li>
-            <li><span class="them">Generic answers</span><span class="us">Framed to your book and coverage</span></li>
-            <li><span class="them">Confident guesses</span><span class="us">Every claim sourced, unverified items flagged</span></li>
-            <li><span class="them">Your data sent to a vendor</span><span class="us">Runs inside your environment</span></li>
-            <li><span class="them">Months of integration</span><span class="us">Live on your coverage in weeks</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- What we build -->
-    <section class="band">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">What we build</p>
-          <h2>From the research desk to the <em>back office.</em></h2>
-          <p class="lede">We focus on the work that eats your team's hours and where a well-built tool compounds every day.</p>
-        </div>
-        <div class="cards reveal">
-          <article class="card">
-            <span class="num">01 / Research</span>
-            <h3>Analyst copilots</h3>
-            <p>Agents that read filings, transcripts, and expert calls, then surface what changed — with every claim linked to source.</p>
+            <footer class="panel-foot"><b>For the book:</b> numbers held, language softened in four places. Suggested question for the call-back: what changed in pricing?</footer>
           </article>
-          <article class="card">
-            <span class="num">02 / Data</span>
-            <h3>Alt-data pipelines</h3>
-            <p>Turn messy vendor feeds, web data, and unstructured documents into clean, queryable signals your quants can trust.</p>
-          </article>
-          <article class="card">
-            <span class="num">03 / Portfolio</span>
-            <h3>PM decision support</h3>
-            <p>Morning briefs, position monitoring, and natural-language access to your own risk and P&amp;L systems.</p>
-          </article>
-          <article class="card">
-            <span class="num">04 / Operations</span>
-            <h3>Ops automation</h3>
-            <p>Reconciliations, trade breaks, investor reporting, and DDQ responses — handled by agents, reviewed by people.</p>
-          </article>
-          <article class="card">
-            <span class="num">05 / Compliance</span>
-            <h3>Compliance tooling</h3>
-            <p>Communications review, restricted-list checks, and audit trails built so your CCO is comfortable signing off.</p>
-          </article>
-          <article class="card">
-            <span class="num">06 / Enablement</span>
-            <h3>Internal AI platform</h3>
-            <p>Secure model access, evaluation, and guardrails so your own team can build the next ten tools themselves.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- Report summaries -->
-    <section id="summaries">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Automatic report summaries</p>
-          <h2>Every report read, compared, and <em>summarized for you.</em></h2>
-          <p class="lede">Broker notes, alt-data updates, and expert-call transcripts arrive faster than anyone can read them. Our agents read each one the moment it lands and tell you what changed: which estimates moved, how the tone shifted, and whether it matters for your position.</p>
-        </div>
-
-        <div class="summary-grid reveal">
-          <article class="summary-card" aria-label="Illustrative summary of an incoming research report">
+          <article class="summary-card reveal" aria-label="Synthetic example: broker note compared with the prior note">
             <header class="summary-head">
               <div>
-                <p class="summary-kicker">New report · Company A · Q3 tracking update</p>
+                <p class="summary-kicker">Broker note · Company B · Q3 tracking</p>
                 <h3>Tracking moved from in line to above consensus</h3>
               </div>
-              <span class="badge badge-up">▲ Revised up</span>
+              <span class="badge badge-up">Revised up</span>
             </header>
-
             <div class="summary-block">
-              <h4>Estimate revisions vs. the prior report</h4>
+              <h4>Against the same broker's last note</h4>
               <table class="rev-table">
-                <thead><tr><th scope="col">Metric</th><th scope="col">Prior</th><th scope="col">Now</th><th scope="col">Consensus</th><th scope="col">Change</th></tr></thead>
+                <thead><tr><th scope="col">Metric</th><th scope="col">Prior</th><th scope="col">Now</th><th scope="col">Cons.</th></tr></thead>
                 <tbody>
-                  <tr><th scope="row">Revenue growth Y/Y</th><td>+6.1%</td><td>+7.4%</td><td>+6.3%</td><td class="up">▲ 130bp</td></tr>
-                  <tr><th scope="row">Active customers</th><td>+2.0%</td><td>+2.2%</td><td>+2.1%</td><td class="up">▲ 20bp</td></tr>
-                  <tr><th scope="row">Spend per customer</th><td>+4.0%</td><td>+3.6%</td><td>+4.2%</td><td class="down">▼ 40bp</td></tr>
+                  <tr><th scope="row">Revenue growth Y/Y</th><td>+6.1%</td><td class="up">+7.4%</td><td>+6.3%</td></tr>
+                  <tr><th scope="row">Active customers</th><td>+2.0%</td><td class="up">+2.2%</td><td>+2.1%</td></tr>
+                  <tr><th scope="row">Spend per customer</th><td>+4.0%</td><td class="down">+3.6%</td><td>+4.2%</td></tr>
                 </tbody>
               </table>
             </div>
-
             <div class="summary-block">
-              <h4>Tone inflection</h4>
+              <h4>Wording</h4>
               <ul class="tone-list">
                 <li><span class="tone-prior">“demand remains steady”</span><span class="tone-arrow">→</span><span class="tone-now">“demand is accelerating into the quarter”</span></li>
                 <li><span class="tone-prior">“no change to our outlook”</span><span class="tone-arrow">→</span><span class="tone-now">“upside to our prior estimate”</span></li>
               </ul>
-              <div class="tone-meter" aria-label="Tone moved from neutral to positive">
-                <span class="tone-scale"><span class="tone-from" style="--p:.5"></span><span class="tone-to" style="--p:.74"></span></span>
-                <span class="tone-labels"><span>Cautious</span><span>Neutral</span><span>Positive</span></span>
-              </div>
             </div>
-
             <div class="summary-block">
-              <h4>What it means for the book</h4>
-              <p>Supports the long. Growth is running ahead of the Street, but spend per customer slipped for the second report in a row. That's the leg to watch into the print.</p>
-              <p class="summary-meta">Also flagged: the panel was re-based this month, so year-over-year comparisons use the vendor's restated history. Two quotes linked to source.</p>
+              <h4>For the book</h4>
+              <p>Supports the long. Spend per customer slipped for the second note in a row; watch it into the print.</p>
+              <p class="summary-meta">The broker's panel was re-based this month, so Y/Y uses restated history. Two quotes linked to source.</p>
             </div>
           </article>
-
-          <div class="summary-points">
-            <div class="sp">
-              <h3>Revisions, not just readouts</h3>
-              <p>Every new report is lined up against the last one from the same source and against consensus, so you see which way estimates moved, not just where they are.</p>
-            </div>
-            <div class="sp">
-              <h3>Tone and language shifts</h3>
-              <p>Changes in wording like “steady” to “accelerating,” or “in line” to “tracking above” are pulled out side by side. Softening language gets flagged even when the numbers haven't moved yet.</p>
-            </div>
-            <div class="sp">
-              <h3>Across sources, not one at a time</h3>
-              <p>When a broker note, an alt-data update, and an expert call disagree about the same company, the summary says so and shows where each one stands.</p>
-            </div>
-            <div class="sp">
-              <h3>Framed to your positions</h3>
-              <p>Each summary ends with what it means for the book: confirms, cuts against, or doesn't matter. It is delivered to email, chat, or your research notes.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Live call intelligence -->
+    <!-- Demo 2: live calls with MNPI held back -->
     <section id="live-calls" class="band">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Live call intelligence</p>
-          <h2>Flags while the call is <em>still happening.</em></h2>
-          <p class="lede">We connect to the note-taker your team already uses, such as Granola, and read the transcript as it's written. During expert calls, earnings calls, and management meetings, the agent checks what's said against your model, your data, and what was said before, and flags what matters in real time.</p>
+        <div class="section-head">
+          <h2>Expert calls, checked while they happen.</h2>
+          <p class="lede">We connect to the note-taker your analysts already use, such as Granola, and read the transcript as it's written. Claims are checked against your model, your data and earlier calls.</p>
         </div>
 
         <div class="live-grid">
-          <div class="live-call reveal" role="img" aria-label="Illustration: a live expert-call transcript with flags appearing next to key lines">
-            <div class="desk-bar"><i></i><i></i><i></i><span class="live-dot">live · expert call · former regional sales lead</span></div>
+          <div class="live-call panel-dark" aria-label="Synthetic example: an expert-call transcript with flags">
+            <header class="panel-head"><span>Expert call · former regional sales lead</span><span>14 min in</span></header>
             <ol class="lc-list">
               <li class="lc-line">
                 <div class="lc-say"><time>12:41</time><b>Expert</b><p>“Pricing held through the spring, but we started seeing a lot more discounting in June.”</p></div>
-                <div class="lc-flag flag-tone"><span class="fi" aria-hidden="true">↺</span><span><strong>Contradicts earlier commentary.</strong> A prior call in March said “no discounting this year.”</span></div>
+                <div class="lc-flag flag-tone"><span class="fi">Earlier</span><span><strong>Contradicts a March call</strong> with another expert, who said “no discounting this year.”</span></div>
               </li>
               <li class="lc-line">
                 <div class="lc-say"><time>13:05</time><b>Expert</b><p>“I'd say fifteen, maybe twenty percent of our accounts were testing the new entrant.”</p></div>
-                <div class="lc-flag flag-data"><span class="fi" aria-hidden="true">≠</span><span><strong>Differs from the data.</strong> Panel share for the entrant is about 11%. Worth asking how accounts are counted.</span></div>
+                <div class="lc-flag flag-data"><span class="fi">Data</span><span><strong>Higher than the panel.</strong> Panel share for the entrant is about 11%. Worth asking how accounts are counted.</span></div>
               </li>
               <li class="lc-line">
-                <div class="lc-say"><time>13:30</time><b>Analyst</b><p>“Is that mostly enterprise, or smaller accounts?”</p></div>
+                <div class="lc-say"><time>14:22</time><b>Expert</b><p><span class="redact" role="img" aria-label="Redacted segment"></span></p></div>
+                <div class="lc-flag flag-comp"><span class="fi">MNPI</span><span><strong>Possible MNPI. Held back.</strong> The segment is kept out of the shared notes and compliance has the original. Nothing from it reaches the summary.</span></div>
               </li>
               <li class="lc-line">
-                <div class="lc-say"><time>14:22</time><b>Expert</b><p>“I probably shouldn't say this, but the numbers that went to the board last week…”</p></div>
-                <div class="lc-flag flag-comp"><span class="fi" aria-hidden="true">⚠</span><span><strong>Compliance: possible MNPI.</strong> Compliance alerted; this segment is held out of the notes.</span></div>
-              </li>
-              <li class="lc-line">
-                <div class="lc-flag flag-ask"><span class="fi" aria-hidden="true">?</span><span><strong>Suggested follow-up.</strong> “Did the June discounting carry into July, or was it end-of-quarter?”</span></div>
+                <div class="lc-flag flag-ask"><span class="fi">Ask</span><span><strong>Follow-up while they're on the line:</strong> “Did the June discounting carry into July, or was it end of quarter?”</span></div>
               </li>
             </ol>
           </div>
 
           <div class="live-points">
             <div class="sp">
-              <h3>Checked against what you already know</h3>
-              <p>Every claim is compared in the moment with your model, your alt data, and prior calls with the same company or expert. Contradictions and new numbers are flagged, not buried in a transcript.</p>
+              <h3>Compliance sees it first</h3>
+              <p>Language that suggests material non-public information is flagged the moment it's said and kept out of shared notes, following your firm's policy.</p>
             </div>
             <div class="sp">
-              <h3>Compliance built in</h3>
-              <p>Language that suggests material non-public information triggers an immediate alert and keeps that segment out of the shared notes, following your firm's policy.</p>
-            </div>
-            <div class="sp">
-              <h3>Better questions, in time to ask them</h3>
-              <p>The agent suggests follow-ups while the expert is still on the line, based on the gaps between what they said and what your data shows.</p>
+              <h3>Checked against what you know</h3>
+              <p>New numbers are compared with your model and licensed data. Contradictions with earlier calls are shown with the source.</p>
             </div>
             <div class="sp">
               <h3>Notes filed before you hang up</h3>
-              <p>When the call ends, you get main takes, model-relevant numbers, inconsistencies, and verbatim quotes linked to the transcript, filed to the right company in your research notes.</p>
+              <p>Main takes, model-relevant numbers and verbatim quotes, filed to the right company in your notes system.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Example builds -->
-    <section id="examples" class="rule-top">
+    <!-- Alt data -->
+    <section id="alt-data">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Example builds</p>
-          <h2>Tools we've run on a <em>live book.</em></h2>
-          <p class="lede">These are examples of systems we've built and used ourselves, day after day. Every client version is built from scratch around your coverage, your data, and your process.</p>
-        </div>
-
-        <div class="brief-demo reveal">
-          <div class="brief-anatomy" role="img" aria-label="Illustration: the sections of an automated pre-open brief">
-            <div class="desk-bar"><i></i><i></i><i></i><span>pre-open brief · generated 06:40</span></div>
-            <ol class="anatomy-list">
-              <li><span>Macro &amp; tape</span><em>what the market is pricing today</em></li>
-              <li><span>Company news</span><em>only what changed since yesterday's brief</em></li>
-              <li><span>Broker actions</span><em>rumors checked against the source</em></li>
-              <li><span>Channel checks</span><em>new research across your portals</em></li>
-              <li><span>Insider filings</span><em>coded by signal strength</em></li>
-              <li><span>Technical levels</span><em>names sitting on key moving averages</em></li>
-              <li><span>Data reads</span><em>alt-data vs. consensus</em></li>
-              <li><span>Three pitches</span><em>bull and bear cases, checked for consistency</em></li>
-              <li><span>Catalyst calendar</span><em>confirmed vs. estimated dates</em></li>
-              <li><span>Data-integrity notes</span><em>what was stale, missing, or unverified</em></li>
-            </ol>
-          </div>
-          <div class="brief-copy">
-            <h3>The pre-open brief</h3>
-            <p>Runs every morning before the open. It sweeps overnight news, broker actions, insider filings, research portals, alt-data releases, and technical levels across the whole coverage list. Then it frames every item against the actual book: does this confirm the position, or cut against it?</p>
-            <p>The part PMs notice is what it <em>won't</em> do. When a broker upgrade shows up in a feed but can't be confirmed at the source, the brief says so and leaves it out. Stale data is labelled stale. Nothing gets a number the source didn't give.</p>
-          </div>
-        </div>
-
-        <div class="cards examples-grid reveal">
-          <article class="card">
-            <span class="num">Research</span>
-            <h3>Call notes in minutes</h3>
-            <p>Expert calls, conferences, and podcasts are transcribed privately and turned into main takes, model-relevant numbers, and contradictions with what management said before. Every line is footnoted to the transcript, and garbled figures are flagged instead of guessed.</p>
-          </article>
-          <article class="card">
-            <span class="num">Channel checks</span>
-            <h3>Expert-series synthesis</h3>
-            <p>Reads across a whole series of expert or agency panels at once. It accounts for each panel's built-in bias and focuses on what's tradeable: which way estimates are moving, and how names rank against each other.</p>
-          </article>
-          <article class="card">
-            <span class="num">Data</span>
-            <h3>Alt-data vs. consensus</h3>
-            <p>Archives every vendor release, lines up each KPI against consensus, and tracks whether a beat or miss is persisting or fading. It tells a fresh read from a re-published old one, so nobody trades on last month's data.</p>
-          </article>
-          <article class="card">
-            <span class="num">Earnings</span>
-            <h3>Earnings-call diffs</h3>
-            <p>Each transcript is compared line by line with last quarter's: guidance language, new risk wording, questions management dodged, and shifts in tone, ready minutes after the call ends.</p>
-          </article>
-          <article class="card">
-            <span class="num">Memory</span>
-            <h3>Research that files itself</h3>
-            <p>Filings, broker research, models, alt-data, and call notes land in the right folder per name, automatically. Thesis patterns are tracked over time, including the ones deliberately rejected, and why.</p>
-          </article>
-          <article class="card">
-            <span class="num">Monitoring</span>
-            <h3>Insider and event scans</h3>
-            <p>Checks regulatory filings across the coverage list, separating scheduled selling from real open-market buys, and ties each one back to the position it affects.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Alt-data agents -->
-    <section id="alt-data" class="band">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Alt-data agents</p>
-          <h2>Every dataset you license, <em>working every day.</em></h2>
-          <p class="lede">Funds pay for card panels, receipt data, app and web traffic, and channel checks. Then analysts have time to open a fraction of it. We build agents that take in every release, check vendors against each other, and turn raw panels into the analysis you'd otherwise wait on a data team for.</p>
+        <div class="section-head">
+          <h2>Alt data you already license, checked each time it lands.</h2>
+          <p class="lede">Funds pay for card panels, receipts, app and web traffic. Analysts open a fraction of it. Agents take in each release, check vendors against each other and rerun the analyses your team relies on.</p>
         </div>
 
         <div class="alt-grid">
-          <ul class="alt-list reveal">
-            <li><h3>Signal triangulation</h3><p>Compare what several vendors say about the same KPI, adjust for each panel's known bias, and flag when they disagree ahead of the print.</p></li>
-            <li><h3>Automated cohort analysis</h3><p>Rebuild retention, repeat-rate, and spend-per-customer curves by acquisition cohort every time new panel data lands.</p></li>
-            <li><h3>Nowcasts vs. consensus</h3><p>Turn panel reads into KPI estimates with backtested error bands, and track the gap to the Street into earnings.</p></li>
-            <li><h3>Panel health checks</h3><p>Catch shrinking panels, merchant drop-outs, methodology changes, and rebases before they show up as a false signal.</p></li>
-            <li><h3>Dataset trials</h3><p>Backtest a new vendor against reported numbers before you sign the contract, not after.</p></li>
-            <li><h3>Point-in-time by default</h3><p>Every series is stored as it was known on the day, so backtests don't quietly peek at the future.</p></li>
-          </ul>
+          <dl class="alt-list">
+            <div><dt>Triangulation</dt><dd>Several vendors on the same KPI, adjusted for each panel's known bias. Disagreements are flagged ahead of the print.</dd></div>
+            <div><dt>Panel health</dt><dd>Shrinking panels, merchant drop-outs and rebases caught before they show up as a false signal.</dd></div>
+            <div><dt>Point-in-time</dt><dd>Each series is stored as it was known on the day, so backtests can't peek at the future.</dd></div>
+            <div><dt>Dataset trials</dt><dd>A new vendor is tested against reported numbers before you sign the contract.</dd></div>
+          </dl>
 
-          <div class="alt-visuals reveal">
-            <figure class="viz-card">
-              <div class="desk-bar"><i></i><i></i><i></i><span>cohort-retention · synthetic data</span></div>
-              <div class="cohort-stage">
-                <canvas id="cohort-3d" aria-hidden="true"></canvas>
-                <p class="viz-fallback">Retention by acquisition cohort, rebuilt with every data drop.</p>
-                <span class="axis axis-x">Months since first purchase →</span>
-                <span class="axis axis-z">← Acquisition cohort</span>
-              </div>
-              <figcaption><span class="key"><span class="swatch sw-hi"></span>Higher retention</span><span class="key"><span class="swatch sw-lo"></span>Lower retention</span><span class="key"><span class="swatch sw-new"></span>Newest data point</span></figcaption>
-            </figure>
-
-            <figure class="viz-card tri-card">
-              <div class="desk-bar"><i></i><i></i><i></i><span>signal triangulation · illustrative</span></div>
-              <table class="tri">
-                <caption>Quarter-to-date KPI growth, year over year</caption>
-                <thead><tr><th scope="col">Source</th><th scope="col">Read</th><th scope="col" class="bar-col"><span class="sr-only">Chart</span></th></tr></thead>
-                <tbody>
-                  <tr><th scope="row">Card panel</th><td>+4.1%</td><td class="bar-col"><span class="bar" style="--v:.68"></span></td></tr>
-                  <tr><th scope="row">Receipt panel</th><td>+3.4%</td><td class="bar-col"><span class="bar" style="--v:.57"></span></td></tr>
-                  <tr><th scope="row">App activity</th><td>+5.0%</td><td class="bar-col"><span class="bar" style="--v:.83"></span></td></tr>
-                  <tr class="blend"><th scope="row">Bias-adjusted blend</th><td>+4.0%</td><td class="bar-col"><span class="bar" style="--v:.67"></span></td></tr>
-                  <tr class="cons"><th scope="row">Consensus</th><td>+2.8%</td><td class="bar-col"><span class="bar" style="--v:.47"></span></td></tr>
-                </tbody>
-              </table>
-              <p class="tri-verdict"><span class="dot"></span>Sources agree: tracking ~120bp above consensus. Panel health normal.</p>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Illustrative analyses -->
-    <section id="analyses">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Analyses on autopilot</p>
-          <h2>The work a data team would do, <em>rebuilt with every release.</em></h2>
-          <p class="lede">When new panel data lands, the agents rerun the analyses your team relies on and flag what moved. Three examples, shown with synthetic data:</p>
+          <figure class="panel tri-card reveal">
+            <header class="panel-head"><span>Company B · quarter-to-date KPI growth, Y/Y</span><span>synthetic</span></header>
+            <table class="tri">
+              <caption class="sr-only">Quarter-to-date KPI growth by source</caption>
+              <thead><tr><th scope="col">Source</th><th scope="col">Read</th><th scope="col" class="bar-col"><span class="sr-only">Chart</span></th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Card panel</th><td>+4.1%</td><td class="bar-col"><span class="bar" style="--v:.68"></span></td></tr>
+                <tr><th scope="row">Receipt panel</th><td>+3.4%</td><td class="bar-col"><span class="bar" style="--v:.57"></span></td></tr>
+                <tr><th scope="row">App activity</th><td>+5.0%</td><td class="bar-col"><span class="bar" style="--v:.83"></span></td></tr>
+                <tr class="blend"><th scope="row">Bias-adjusted blend</th><td>+4.0%</td><td class="bar-col"><span class="bar" style="--v:.67"></span></td></tr>
+                <tr class="cons"><th scope="row">Consensus</th><td>+2.8%</td><td class="bar-col"><span class="bar" style="--v:.47"></span></td></tr>
+              </tbody>
+            </table>
+            <figcaption class="panel-foot">Sources agree: tracking about 120bp above consensus. Panel health normal.</figcaption>
+          </figure>
         </div>
 
         <div class="viz-grid">
@@ -456,14 +245,14 @@
               </ul>
             </figcaption>
             <div class="viz-plot"></div>
-            <p class="viz-read"><strong>What the agent flags:</strong> month-3 retention is up about 4 points across the last four cohorts, so growth is coming from customers who stay, not just new sign-ups.</p>
+            <p class="viz-read"><strong>What the agent flags:</strong> month-3 retention is up about 4 points across the last four cohorts, so growth is coming from customers who stay.</p>
             <details class="viz-data"><summary>View data table</summary><div class="viz-table"></div></details>
           </figure>
 
           <figure class="viz reveal" data-chart="share" data-label="Stacked columns: monthly market share for two incumbents, a new entrant launching in July 2025, and other players.">
             <figcaption class="viz-head">
-              <span class="viz-kicker">Market share after a new entrant</span>
-              <h3>Who is the new entrant taking share from?</h3>
+              <span class="viz-kicker">Share after a new entrant</span>
+              <h3>Who is the entrant taking share from?</h3>
               <p>Share of category spend by month, from a transaction panel.</p>
               <ul class="viz-legend">
                 <li><span class="lg-sw" style="background:#2a78d6"></span>Incumbent A</li>
@@ -476,163 +265,106 @@
             <p class="viz-read"><strong>What the agent flags:</strong> the entrant reached about 11% share within a year, taking roughly 1.6 times as much from Incumbent B as from Incumbent A.</p>
             <details class="viz-data"><summary>View data table</summary><div class="viz-table"></div></details>
           </figure>
-
-          <figure class="viz viz-wide reveal" data-chart="forecast" data-label="Line chart: reported quarterly growth, our backtested estimate, and consensus, with three extrapolation methods and a blended estimate for the quarter in progress.">
-            <figcaption class="viz-head">
-              <span class="viz-kicker">Quarterly forecast</span>
-              <h3>Three ways to project the quarter, blended and checked against the Street</h3>
-              <p>Revenue growth year over year. For the quarter in progress, each extrapolation method is shown next to the blended estimate, consensus, and the guidance range.</p>
-              <ul class="viz-legend">
-                <li><span class="lg-sw" style="background:#5b636b"></span>Reported</li>
-                <li><span class="lg-sw" style="background:#2a78d6"></span>Our estimate</li>
-                <li><span class="lg-sw lg-dash" style="border-color:#eb6834"></span>Consensus</li>
-                <li><span class="lg-sw lg-hollow"></span>Extrapolation methods</li>
-                <li><span class="lg-sw" style="background:#d8d3c7"></span>Guidance range</li>
-              </ul>
-            </figcaption>
-            <div class="viz-body">
-              <div class="viz-plot"></div>
-              <aside class="viz-stats" aria-label="Backtest accuracy">
-                <p class="stat-label">Average miss vs. reported, last 10 quarters</p>
-                <div class="stat"><span class="stat-v" data-stat="mae-ours">0.2pp</span><span class="stat-k">Our estimate</span></div>
-                <div class="stat"><span class="stat-v muted" data-stat="mae-cons">0.7pp</span><span class="stat-k">Consensus</span></div>
-                <p class="stat-note">Blended estimate for the quarter in progress: <strong>12.6%</strong>, about 120bp above consensus and above the top of guidance.</p>
-              </aside>
-            </div>
-            <details class="viz-data"><summary>View data table</summary><div class="viz-table"></div></details>
-          </figure>
         </div>
-        <p class="viz-source">All charts use synthetic data for illustration. No client, vendor, or company data is shown.</p>
+        <p class="viz-source">All examples on this page use synthetic data. No client, vendor or company data is shown.</p>
       </div>
     </section>
 
-    <!-- Proactive agents -->
-    <section id="proactive" class="rule-top">
-      <div class="container split">
-        <div class="reveal">
-          <p class="eyebrow">Proactive agents</p>
-          <h2>Agents that work <em>before you ask.</em></h2>
-          <p class="lede">Most AI tools wait for a prompt. We also build agents that run on their own: they watch your book, your data, and your inbox around the clock, and come to you when something needs attention.</p>
-          <ul class="checks">
-            <li><strong>Event-driven.</strong> A filing hits, a price gaps, a vendor file arrives late, and the agent is already working.</li>
-            <li><strong>Scheduled.</strong> Briefs, reconciliations, and reports ready before the team sits down.</li>
-            <li><strong>Where you already work.</strong> Alerts go to Slack, Teams, email, or Symphony, with sources attached.</li>
-            <li><strong>On your rules.</strong> You decide what they watch, when they escalate, and what always needs a human sign-off.</li>
+    <!-- Security, stated once -->
+    <section id="security" class="band">
+      <div class="container security-grid">
+        <div>
+          <h2>Where your data goes.</h2>
+          <p class="lede">Into your own cloud account, and no further than you approve. Each line below is a term in our client agreement.</p>
+          <ul class="terms-list">
+            <li><strong>Runs in your environment.</strong> We build and run everything in your cloud or on-prem. No copies on our systems unless you approve one in writing for a specific task.</li>
+            <li><strong>Model calls on your terms.</strong> Only to providers you approve, under terms that forbid training, with zero retention where the provider offers it. Or to models hosted inside your account.</li>
+            <li><strong>Never used for training.</strong> Your data and outputs are never used to train or improve any model, ours or anyone else's. The one exception is a model you ask us to tune that stays in your account.</li>
+            <li><strong>Never shared.</strong> Nothing from your fund is used for another client, in any form, including anonymized.</li>
+            <li><strong>Yours at the end.</strong> You own what we build for you, with a permanent license to any reusable parts of ours inside it. Your data is returned, then deleted, and we certify the deletion in writing.</li>
           </ul>
+          <a class="text-link" href="security.html">See a sample deletion certificate <span class="arrow">→</span></a>
         </div>
-        <div class="feed reveal" role="img" aria-label="Illustration: a feed of alerts from proactive agents overnight and before the market open">
-          <div class="desk-bar"><i></i><i></i><i></i><span>deskside · agents · live</span></div>
-          <ol class="feed-list">
-            <li><time>05:42</time><span class="tagx watch">Filings</span><p>8-K filed on a <b>top-10 position</b>: CFO departure. Summary and prior-CEO-change precedents sent to the PM.</p></li>
-            <li><time>06:10</time><span class="tagx data">Data</span><p>Card-spend panel arrived with <b>18% fewer merchants</b> than usual. Signal refresh paused, quant team notified.</p></li>
-            <li><time>06:30</time><span class="tagx brief">Brief</span><p>Pre-open brief ready. A feed-reported upgrade <b>couldn't be confirmed</b> with the broker, so it was flagged and left out.</p></li>
-            <li><time>07:05</time><span class="tagx ops">Ops</span><p>2 trade breaks with the prime broker matched to a booking error. Fix drafted, <b>awaiting ops approval</b>.</p></li>
-            <li><time>09:31</time><span class="tagx risk">Risk</span><p>Sector exposure crossed the <b>limit you set</b>. PM and risk alerted with the positions driving it.</p></li>
-          </ol>
-        </div>
+
+        <figure class="flow" aria-labelledby="flow-cap">
+          <svg viewBox="0 0 540 380" role="img" aria-labelledby="flow-cap">
+            <defs>
+              <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a97a3"/></marker>
+            </defs>
+            <rect x="10" y="10" width="330" height="360" rx="8" fill="none" stroke="#6fd3a7" stroke-width="1.5"/>
+            <text x="26" y="36" class="f-title">Your cloud account</text>
+            <rect x="34" y="56" width="282" height="64" rx="5" class="f-box"/>
+            <text x="50" y="82" class="f-h">Research you already have</text>
+            <text x="50" y="102" class="f-s">broker notes · filings · data licenses · notes</text>
+            <line x1="175" y1="120" x2="175" y2="150" stroke="#8a97a3" stroke-width="1.5" marker-end="url(#ah)"/>
+            <rect x="34" y="154" width="282" height="64" rx="5" class="f-box f-core"/>
+            <text x="50" y="180" class="f-h">Deskside agents</text>
+            <text x="50" y="200" class="f-s">code you own · audit log · MNPI checks</text>
+            <line x1="175" y1="218" x2="175" y2="248" stroke="#8a97a3" stroke-width="1.5" marker-end="url(#ah)"/>
+            <rect x="34" y="252" width="282" height="64" rx="5" class="f-box"/>
+            <text x="50" y="278" class="f-h">Your team</text>
+            <text x="50" y="298" class="f-s">inbox · notes system · Excel · chat</text>
+            <text x="34" y="350" class="f-s">Optional: models hosted in this account</text>
+            <line x1="316" y1="186" x2="378" y2="186" stroke="#8a97a3" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#ah)" marker-start="url(#ah)"/>
+            <rect x="382" y="140" width="148" height="92" rx="5" class="f-box f-out"/>
+            <text x="394" y="164" class="f-h">Model provider</text>
+            <text x="394" y="184" class="f-s">you approve</text>
+            <text x="394" y="202" class="f-s">no training</text>
+            <text x="394" y="220" class="f-s">zero retention*</text>
+            <rect x="382" y="274" width="148" height="60" rx="5" class="f-box f-no"/>
+            <text x="394" y="298" class="f-h">Deskside</text>
+            <text x="394" y="318" class="f-s">no copies by default</text>
+            <line x1="316" y1="294" x2="370" y2="294" stroke="#e5484d" stroke-width="1.5"/>
+            <line x1="336" y1="284" x2="352" y2="304" stroke="#e5484d" stroke-width="1.5"/>
+            <line x1="352" y1="284" x2="336" y2="304" stroke="#e5484d" stroke-width="1.5"/>
+          </svg>
+          <figcaption id="flow-cap">How data moves in a typical deployment. *Where the provider offers it.</figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- How we work -->
-    <section id="how-we-work" class="rule-top">
+    <section id="how-we-work">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">How we deploy</p>
-          <h2>Live on your desk in weeks, not quarters.</h2>
+        <div class="section-head">
+          <h2>Forward-deployed: we build at your desk.</h2>
+          <p class="lede">The engineers you meet on the first call are the ones who sit with your analysts and write the code. The diagnostic and pilot are fixed fee, agreed before we start.</p>
         </div>
-        <ol class="steps reveal">
+        <ol class="steps">
           <li>
             <span class="when">Week 0</span>
             <h3>Sit with the desk</h3>
-            <p>We shadow your analysts, PMs, or ops team for a few days. We map where time goes and pick one workflow where AI can pay for itself quickly.</p>
+            <p>We spend a few days with your analysts and PMs, see what they read each morning, and pick one workflow worth automating.</p>
           </li>
           <li>
             <span class="when">Weeks 1–2</span>
             <h3>Ship a first version</h3>
-            <p>A working tool in the hands of real users — inside your environment, on your data, with your security team in the loop from day one.</p>
+            <p>A working tool on your coverage, in your environment, with your security team involved from day one.</p>
           </li>
           <li>
             <span class="when">Weeks 3–8</span>
-            <h3>Iterate at the desk</h3>
-            <p>Daily feedback, tight loops, and evaluations against your own examples. We harden it until the team relies on it without thinking.</p>
+            <h3>Tune it at the desk</h3>
+            <p>Daily feedback and tests against your own past examples, until the team uses it without being asked.</p>
           </li>
           <li>
-            <span class="when">Ongoing</span>
-            <h3>Hand off or expand</h3>
-            <p>You get the code, documentation, and a team that knows how to run it. Many clients then point us at the next workflow.</p>
+            <span class="when">After</span>
+            <h3>Hand over or keep going</h3>
+            <p>You get the code, documentation and a walkthrough for your team. Or we stay on a monthly retainer and build the next one.</p>
           </li>
         </ol>
-      </div>
-    </section>
-
-    <!-- Who we work with -->
-    <section class="rule-top">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Who we work with</p>
-          <h2>Hedge funds first. Anyone with a desk, second.</h2>
-        </div>
-        <div class="sectors reveal">
-          <div class="sector primary">
-            <span class="tag">Core focus</span>
-            <h3>Hedge funds</h3>
-            <p>Fundamental long/short, multi-manager pods, macro, and quant shops. We understand the pace, the secrecy, and why a tool that's right 95% of the time isn't good enough.</p>
-          </div>
-          <div class="sector">
-            <h3>Asset managers</h3>
-            <p>Research scale, client reporting, and RFP/DDQ automation.</p>
-          </div>
-          <div class="sector">
-            <h3>Family offices</h3>
-            <p>Lean teams that need leverage across a broad portfolio.</p>
-          </div>
-          <div class="sector">
-            <h3>PE &amp; beyond</h3>
-            <p>Diligence, portfolio monitoring, and any team drowning in documents.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Principles -->
-    <section class="band">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Our commitments</p>
-          <h2>Built for firms where <em>trust is the product.</em></h2>
-        </div>
-        <div class="principles reveal">
-          <div class="principle">
-            <h3>Your data stays yours</h3>
-            <p>We deploy inside your cloud or on-prem. No training on your data, no shared tenancy, no surprises for your CISO.</p>
-          </div>
-          <div class="principle">
-            <h3>Every answer has a source</h3>
-            <p>Outputs cite the filing, the page, the cell. If the model can't back it up, the tool says so.</p>
-          </div>
-          <div class="principle">
-            <h3>Compliance in the room</h3>
-            <p>We work with your CCO and security team from the first week, not the last. Logging and audit trails are built in.</p>
-          </div>
-          <div class="principle">
-            <h3>You own everything</h3>
-            <p>Code, prompts, evaluations, and infrastructure are yours. No platform lock-in, no per-seat tax.</p>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="cta">
       <div class="container">
-        <div class="cta-box reveal">
+        <div class="cta-box">
           <div>
-            <p class="eyebrow">Get started</p>
-            <h2>Tell us the workflow that eats your team's week.</h2>
-            <p class="cta-sub">You'll talk to the engineers who'd do the work, not a salesperson. We'll tell you honestly whether AI can help, and where we'd start.</p>
+            <h2>Tell us what your team reads every morning.</h2>
+            <p class="cta-sub">You'll talk to the engineers who would build it. We'll say plainly whether we can help, and where we'd start.</p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="contact.html">See it on your coverage <span class="arrow">→</span></a>
+            <a class="btn btn-primary" href="contact.html">Book a call <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -644,16 +376,15 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html"><img class="brand-mark" src="assets/logo-mark-dark.svg" alt="">Deskside</a>
-          <p style="margin-top:14px;max-width:26em">Private AI research agents for hedge funds and investment firms.</p>
+          <p class="footer-tag">Forward-deployed engineers for buy-side research desks.</p>
         </div>
         <div>
           <h4>Company</h4>
           <ul>
-            <li><a href="services.html">Solutions</a></li>
+            <li><a href="services.html">What we build</a></li>
+            <li><a href="security.html">Security</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
           </ul>
         </div>
         <div>
@@ -661,6 +392,7 @@
           <ul>
             <li><a href="mailto:hello@desksidelabs.com">hello@desksidelabs.com</a></li>
             <li>New York, NY</li>
+            <li><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></li>
           </ul>
         </div>
       </div>

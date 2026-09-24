@@ -7,12 +7,12 @@ Read this before changing anything. If a request conflicts with a rule below, sa
 ## Repo map
 
 ```
-index.html, services.html, about.html, contact.html, privacy.html, terms.html   pages (plain HTML)
+index.html, services.html, security.html, about.html, contact.html, privacy.html, terms.html   pages (plain HTML)
 assets/styles.css      all styles (one file, CSS custom properties on :root)
-assets/main.js         nav, reveal-on-scroll, contact form, hero/insight card cycling
-assets/scene.js        3D scenes (three.js, self-hosted in assets/vendor/)
+assets/main.js         nav, reveal-on-scroll, contact form, live-call demo, hero brief cycling
+assets/scene.js        3D coverage bars in the hero brief (three.js, self-hosted in assets/vendor/)
 assets/charts.js       illustrative SVG charts (synthetic data only)
-assets/fonts/          self-hosted fonts (Inter, Newsreader, JetBrains Mono)
+assets/fonts/          self-hosted fonts (IBM Plex Sans, IBM Plex Mono, Newsreader)
 legal/                 DRAFT client contract (MSA) + notes for counsel — not published
 scripts/check.py       pre-merge checks (run before every PR)
 ```
@@ -49,10 +49,13 @@ Vercel project `deskside-llc` (team "zhendaotsai's projects") auto-deploys the p
 ## Voice and design
 
 - Plain English for skeptical, busy finance readers. Specific over impressive. No hype words (unlock, empower, seamless, revolutionize, cutting-edge), no "not just X, it's Y", go easy on em dashes.
-- Current headline: "Know what changed, and why it matters to your book." Positioning: we connect the research a fund already pays for to its own notes, models and positions — partner with data vendors, don't compete with them.
-- Brand: ink `#0f1720`, paper `#f6f4ef`, green `#6fd3a7` / `#1f6f5c`, brass `#c8a24a`; Newsreader (headings), Inter (body), JetBrains Mono (labels). Logo is the "Enclave" mark in `assets/favicon.svg`.
+- Current headline: "Know what changed, and why it matters to your book." Lane: **forward-deployed engineers for buy-side research desks**. We connect the research a fund already pays for to its own notes, models and positions. Partner with data vendors, don't compete with them. Don't drift into ops, back-office or generic "AI for finance" copy.
+- Meet analysts where they work: email briefs, their notes system, Excel. Never pitch a new platform.
+- Demos are the proof: pre-open brief, transcript diff, redacted MNPI flag, sample deletion certificate. No case study or numbers from a client until a real, approved one exists.
+- Brand: ink `#0f1720`, paper `#f6f4ef`, green `#6fd3a7` / `#1f6f5c`, brass `#c8a24a`; Newsreader (headings), IBM Plex Sans (body), IBM Plex Mono (labels). Logo is the "Enclave" mark in `assets/favicon.svg`.
 - Charts: follow a validated, colorblind-safe palette; every chart has a legend, hover values, and a "View data table" option.
-- 3D scenes pause off-screen, respect `prefers-reduced-motion`, and the page must work without WebGL.
+- 3D must show data, never decoration (the hero bars are the coverage list). It pauses off-screen, respects `prefers-reduced-motion`, and the page works without WebGL.
+- Avoid the "AI template" look: at most one mono all-caps eyebrow (the hero), italic accent only in the hero H1, no three-dot window bars or symbol bullets, no fade-in on every block, no invented metrics (e.g. backtest accuracy), no "not X, it's Y" lines.
 
 ## Git workflow
 
@@ -60,6 +63,5 @@ See `CONTRIBUTING.md`. Short version: branch from `main`, open a pull request, c
 
 ## Open decisions (don't assume — ask)
 
-- Whether to say "forward-deployed engineers" on the homepage (as the delivery model) alongside the product-led headline.
 - Entity: Delaware C-corp vs Canadian corporation (depends on where founders are resident).
 - Vercel is on the Hobby plan, which is non-commercial; upgrade to Pro before selling.

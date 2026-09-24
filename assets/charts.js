@@ -168,70 +168,6 @@
     }
   }
 
-  /* ---------- 3. Quarterly forecast ---------- */
-  var quarters = ["Q1 '24", "Q2 '24", "Q3 '24", "Q4 '24", "Q1 '25", "Q2 '25", "Q3 '25", "Q4 '25", "Q1 '26", "Q2 '26", "Q3 '26"];
-  var reported = [9.8, 10.4, 11.2, 10.1, 9.5, 8.9, 9.6, 10.8, 11.5, 12.1];
-  var consensus = [9.1, 10.9, 10.3, 10.6, 9.9, 9.6, 9.0, 9.9, 10.9, 11.2, 11.4];
-  var ours = [9.6, 10.6, 11.0, 10.4, 9.3, 9.1, 9.4, 10.5, 11.8, 11.9, 12.6];
-  var methods = [{ name: "Run-rate (QTD)", v: 13.3 }, { name: "Cohort build", v: 12.6 }, { name: "Seasonal shape", v: 12.0 }];
-  var guidance = [10.5, 11.9];
-
-  function mae(a) { var s = 0; for (var i = 0; i < reported.length; i++) s += Math.abs(a[i] - reported[i]); return s / reported.length; }
-
-  function drawForecast(fig) {
-    var small = fig.clientWidth < 520;
-    var f = frame(fig, { l: 40, r: small ? 28 : 118, t: 14, b: 34 });
-    var n = quarters.length, x = scale(0, n - 1, f.x0 + 10, f.x1 - 10), y = scale(8, 14, f.y0, f.y1);
-    var g = el("g", {}, f.svg);
-    yAxis(g, f, y, [8, 10, 12, 14], function (v) { return v + "%"; });
-    quarters.forEach(function (q, i) { if (i % 2 === 0 || i === n - 1) text(g, x(i), f.y0 + 18, q, { "text-anchor": "middle", fill: i === n - 1 ? C.ink2 : C.muted }); });
-    // in-progress quarter band + guidance range
-    var cur = n - 1, half = (x(1) - x(0)) / 2;
-    el("rect", { x: x(cur) - half, y: f.y1, width: half * 2, height: f.y0 - f.y1, fill: "#efece4" }, g);
-    el("rect", { x: x(cur) - 5, y: y(guidance[1]), width: 10, height: y(guidance[0]) - y(guidance[1]), fill: "#d8d3c7", rx: 2 }, g);
-    // lines
-    var rp = reported.map(function (v, i) { return [x(i), y(v)]; });
-    el("path", { d: pathFrom(rp), fill: "none", stroke: C.reported, "stroke-width": 2, "stroke-linejoin": "round" }, g);
-    el("path", { d: pathFrom(consensus.map(function (v, i) { return [x(i), y(v)]; })), fill: "none", stroke: C.s2, "stroke-width": 2, "stroke-dasharray": "5 4" }, g);
-    el("path", { d: pathFrom(ours.map(function (v, i) { return [x(i), y(v)]; })), fill: "none", stroke: C.s1, "stroke-width": 2, "stroke-linejoin": "round" }, g);
-    // method markers
-    var mx = x(cur) + 14;
-    methods.forEach(function (mm) {
-      el("line", { x1: x(cur), x2: mx, y1: y(ours[cur]), y2: y(mm.v), stroke: C.grid, "stroke-width": 1 }, g);
-      el("circle", { cx: mx, cy: y(mm.v), r: 4.5, fill: C.surface, stroke: C.ink2, "stroke-width": 1.5 }, g);
-      if (!small) text(g, mx + 10, y(mm.v) + 4, mm.name, { fill: C.ink2 });
-    });
-    el("circle", { cx: x(cur), cy: y(consensus[cur]), r: 5, fill: C.s2, stroke: C.surface, "stroke-width": 2 }, g);
-    el("circle", { cx: x(cur), cy: y(ours[cur]), r: 6, fill: C.s1, stroke: C.surface, "stroke-width": 2 }, g);
-    if (!small) {
-      text(g, mx + 10, y(consensus[cur]) + 4, "Consensus", { fill: C.ink2 });
-      text(g, mx + 10, y(guidance[0]) + 4, "Guidance range", { fill: C.muted });
-    }
-    // tooltips per quarter
-    var tt = tooltip(fig);
-    quarters.forEach(function (q, i) {
-      var hit = el("rect", { x: x(i) - half, y: f.y1, width: half * 2, height: f.y0 - f.y1, fill: "transparent" }, f.svg);
-      hit.addEventListener("pointermove", function () {
-        var html = '<div class="tt-h">' + q + (i === cur ? " · in progress" : "") + "</div>";
-        if (i < reported.length) html += row(C.reported, "Reported", reported[i].toFixed(1) + "%");
-        html += row(C.s1, i === cur ? "Blended estimate" : "Our estimate", ours[i].toFixed(1) + "%");
-        html += row(C.s2, "Consensus", consensus[i].toFixed(1) + "%", "dash");
-        if (i === cur) {
-          methods.forEach(function (mm) { html += row(C.ink2, mm.name, mm.v.toFixed(1) + "%", "hollow"); });
-          html += row("#d8d3c7", "Guidance", guidance[0] + "–" + guidance[1] + "%");
-        }
-        tt.show(html, x(i), f.y1 + 10, f.W);
-      });
-      hit.addEventListener("pointerleave", function () { tt.hide(); });
-    });
-  }
-
-  function fillStats() {
-    var o = document.querySelector("[data-stat='mae-ours']"), c = document.querySelector("[data-stat='mae-cons']");
-    if (o) o.textContent = mae(ours).toFixed(1) + "pp";
-    if (c) c.textContent = mae(consensus).toFixed(1) + "pp";
-  }
-
   function table(fig, head, rows) {
     var box = fig.querySelector(".viz-table");
     if (!box || box.dataset.built) return;
@@ -249,18 +185,15 @@
     }
     var f2 = document.querySelector("[data-chart='share']");
     if (f2) table(f2, ["Month"].concat(SHARE_KEYS.map(function (k) { return k.name; })), shareData.map(function (d) { return [d.label, d.a.toFixed(1) + "%", d.b.toFixed(1) + "%", d.e.toFixed(1) + "%", d.o.toFixed(1) + "%"]; }));
-    var f3 = document.querySelector("[data-chart='forecast']");
-    if (f3) table(f3, ["Quarter", "Reported", "Our estimate", "Consensus"], quarters.map(function (q, i) { return [q, i < reported.length ? reported[i].toFixed(1) + "%" : "in progress", ours[i].toFixed(1) + "%", consensus[i].toFixed(1) + "%"]; }));
   }
 
-  var charts = { cohort: drawCohort, share: drawShare, forecast: drawForecast };
+  var charts = { cohort: drawCohort, share: drawShare };
   function renderAll() {
     document.querySelectorAll("[data-chart]").forEach(function (fig) {
       var fn = charts[fig.getAttribute("data-chart")];
       if (fn) fn(fig);
     });
   }
-  fillStats();
   buildTables();
   renderAll();
   var t;

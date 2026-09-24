@@ -63,7 +63,7 @@
         "Name: " + (d.get("name") || ""),
         "Firm: " + (d.get("firm") || ""),
         "Email: " + (d.get("email") || ""),
-        "Firm type: " + (d.get("type") || ""),
+        "Strategy: " + (d.get("type") || ""),
         "",
         d.get("message") || ""
       ].join("\n");
@@ -92,22 +92,37 @@
   io.observe(box);
 })();
 
-// Hero engine: cycle the output insight cards.
+// Hero brief: coverage bars (one per name) and a slow cycle through the flagged items.
+// scene.js draws the same data in 3D when WebGL is available; this is the flat fallback.
 (function () {
-  var items = document.querySelectorAll(".engine-out li");
-  if (!items.length) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    items[0].classList.add("on"); items[1].classList.add("on");
-    return;
+  var box = document.querySelector(".coverage");
+  var items = document.querySelectorAll(".mail-items .mi");
+  if (!box || !items.length) return;
+  // Synthetic overnight change scores for 38 names; three are flagged in the brief.
+  var scores = [], flagged = [6, 17, 29], seed = 7;
+  for (var n = 0; n < 38; n++) { seed = (seed * 9301 + 49297) % 233280; scores.push(0.08 + (seed / 233280) * 0.22); }
+  scores[6] = 0.95; scores[17] = 0.8; scores[29] = 0.7;
+  window.desksideCoverage = { scores: scores, flagged: flagged, colors: ["#8a6a1f", "#1f6f5c", "#2a62a8"] };
+
+  var flat = box.querySelector(".coverage-flat");
+  scores.forEach(function (v, k) {
+    var bar = document.createElement("i");
+    bar.style.height = Math.round(v * 100) + "%";
+    var f = flagged.indexOf(k);
+    if (f >= 0) bar.style.background = window.desksideCoverage.colors[f];
+    flat.appendChild(bar);
+  });
+
+  var active = 0, timer = 0, reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function focus(i) {
+    active = i;
+    items.forEach(function (li, k) { li.classList.toggle("is-active", k === i); });
+    window.desksideCoverage.active = i;
+    window.dispatchEvent(new CustomEvent("deskside:focus", { detail: i }));
   }
-  var i = 0;
-  function step() {
-    var prev = (i + items.length - 1) % items.length, wide = window.innerWidth > 560;
-    items.forEach(function (li, k) { li.classList.toggle("on", k === i || (wide && k === prev)); });
-    // newest card on top
-    if (wide && items[i].parentNode.firstElementChild !== items[i]) items[i].parentNode.insertBefore(items[i], items[i].parentNode.firstElementChild);
-    i = (i + 1) % items.length;
-  }
-  step();
-  setInterval(step, 1800);
+  items.forEach(function (li, k) {
+    li.addEventListener("pointerenter", function () { clearInterval(timer); focus(k); });
+  });
+  focus(0);
+  if (!reduced) timer = setInterval(function () { focus((active + 1) % items.length); }, 4000);
 })();

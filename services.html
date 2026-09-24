@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services — Deskside</title>
-  <meta name="description" content="Proactive agents, AI research tools, alt-data pipelines, ops automation, and compliance tooling built by forward-deployed engineers for hedge funds and investment firms.">
-  <meta property="og:title" content="Services — Deskside">
-  <meta property="og:description" content="AI research tools, alt-data pipelines, ops automation, and compliance tooling built by forward-deployed engineers for hedge funds and investment firms.">
+  <title>What we build | Deskside</title>
+  <meta name="description" content="Research agents for hedge fund desks: a common core plus packs for long/short, market neutral, credit, distressed, event-driven, quant and macro. Built by forward-deployed engineers, run in your cloud.">
+  <meta property="og:title" content="What we build | Deskside">
+  <meta property="og:description" content="Research agents for hedge fund desks: a common core plus packs for long/short, market neutral, credit, distressed, event-driven, quant and macro. Built by forward-deployed engineers, run in your cloud.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://desksidelabs.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -31,14 +31,11 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="services.html" aria-current="page">Solutions</a></li>
-        <li><a href="index.html#summaries">Summaries</a></li>
-        <li><a href="index.html#examples">Examples</a></li>
-        <li><a href="index.html#alt-data">Alt data</a></li>
-        <li><a href="index.html#proactive">Agents</a></li>
-        <li><a href="index.html#how-we-work">How we work</a></li>
+        <li><a href="services.html" aria-current="page">What we build</a></li>
+        <li><a href="index.html#demos">Demos</a></li>
+        <li><a href="security.html">Security</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="btn btn-primary" href="contact.html">Get a demo</a></li>
+        <li><a class="btn btn-primary" href="contact.html">Book a call</a></li>
       </ul>
     </nav>
   </header>
@@ -47,88 +44,60 @@
 
     <section class="page-head">
       <div class="container">
-        <p class="eyebrow">Services</p>
-        <h1>AI research agents, built into your <em>investment workflow.</em></h1>
-        <p class="lede">Deskside agents read, compare, and flag across every source your team relies on. Each deployment starts with one real workflow and one real user, and goes live on your coverage in weeks.</p>
+        <h1>What we build for research desks</h1>
+        <p class="lede">One set of research agents that every fund needs, plus a pack for your strategy. Each deployment starts with one workflow and one analyst, runs in your cloud, and is live on your coverage in weeks.</p>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="service reveal" id="proactive-agents">
-          <div><span class="num">01</span><h2>Proactive agents</h2></div>
+        <div class="service" id="core">
+          <div><span class="num">The core</span><h2>What every desk gets</h2></div>
           <div class="service-body">
-            <p>Not every useful agent waits to be asked. We build agents that run continuously in your environment, watching filings, prices, data feeds, positions, and inboxes. They act when something changes: they do the first pass, attach the evidence, and bring it to the right person. You set what they watch, when they escalate, and which actions always need a human to approve.</p>
+            <p>Agents that read what your fund already licenses, join it to your positions and coverage list, and report what changed since last time. Output goes where the team already works.</p>
             <ul class="examples">
-              <li>Filing and news alerts on your positions</li>
-              <li>Pre-open briefs, built overnight</li>
-              <li>Risk and exposure limit monitoring</li>
-              <li>Late or anomalous vendor-data detection</li>
-              <li>Trade-break triage with drafted fixes</li>
-              <li>Inbox agents for fund-admin and broker email</li>
+              <li>Pre-open brief by email, per analyst or per book</li>
+              <li>Broker notes compared with the prior note and consensus</li>
+              <li>Earnings-call and filing comparisons, quarter on quarter</li>
+              <li>Expert-call flags from your note-taker, with MNPI held back</li>
+              <li>Notes filed to the right company in your notes system</li>
+              <li>Model updates pushed into your Excel templates</li>
             </ul>
           </div>
         </div>
 
-        <div class="service reveal">
-          <div><span class="num">02</span><h2>Research &amp; analyst tools</h2></div>
+        <div class="service" id="strategies">
+          <div><span class="num">Strategy packs</span><h2>What changes by strategy</h2></div>
           <div class="service-body">
-            <p>Your analysts spend hours reading so they can spend minutes thinking. We build agents that do the reading — across filings, transcripts, broker research, expert-network calls, and your own internal notes — and bring back what changed, with citations.</p>
-            <ul class="examples">
-              <li>Earnings-call and filing diffing</li>
-              <li>Coverage-universe morning briefs</li>
-              <li>Search over internal research notes</li>
-              <li>Expert-call summarization and tagging</li>
-              <li>Live call flags from your note-taker</li>
-              <li>Model-update assistants for Excel</li>
-              <li>Thesis tracking and catalyst calendars</li>
-            </ul>
+            <p>The core stays the same. What changes is which documents matter and what "changed" means. A pack adds the sources and checks for your strategy.</p>
+            <div class="table-wrap">
+              <table class="strat-table">
+                <thead><tr><th scope="col">Strategy</th><th scope="col">What the pack adds</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Fundamental equity long/short</th><td>Estimate revisions, call-to-call language shifts, alt-data reads against consensus, catalyst dates</td></tr>
+                  <tr><th scope="row">Market neutral</th><td>The same checks across a wider universe, sorted by exposure so the brief stays short</td></tr>
+                  <tr><th scope="row">Credit</th><td>Indentures and credit agreements, covenant headroom, debt footnotes, rating actions, maturity walls</td></tr>
+                  <tr><th scope="row">Distressed and special situations</th><td>Court dockets, first-day declarations, claims registers, capital-structure changes, cleansing dates</td></tr>
+                  <tr><th scope="row">Event-driven and merger arbitrage</th><td>Merger agreements, proxies, 13D/G filings, regulatory timelines across jurisdictions</td></tr>
+                  <tr><th scope="row">Quant and systematic</th><td>Point-in-time text features delivered as code in your repository, ready for your backtests</td></tr>
+                  <tr><th scope="row">Global macro</th><td>Central-bank statements compared meeting to meeting, data surprises, joined to your themes</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
-        <div class="service reveal">
-          <div><span class="num">03</span><h2>Data &amp; alternative data</h2></div>
+        <div class="service" id="data">
+          <div><span class="num">Alt data</span><h2>Data you already license</h2></div>
           <div class="service-body">
-            <p>Structured signals hide in unstructured sources. We build pipelines that extract, clean, and validate data from documents, websites, and vendor feeds, and put it where your quants and fundamental teams already work. Our quant research background means we check point-in-time correctness, look-ahead bias, and coverage before anyone builds a signal on it.</p>
+            <p>We work on top of your vendors, not instead of them. Pipelines check each release, compare vendors on the same KPI and store everything point-in-time, so nobody builds a signal on a rebased panel.</p>
             <ul class="examples">
-              <li>Cross-vendor signal triangulation</li>
-              <li>Automated cohort and retention analysis</li>
-              <li>Document-to-dataset extraction</li>
-              <li>Vendor-data evaluation and onboarding</li>
+              <li>Cross-vendor triangulation</li>
+              <li>Panel health checks</li>
+              <li>Cohort and share analyses, rerun on each release</li>
+              <li>Vendor trials before you sign</li>
               <li>Entity resolution and ticker mapping</li>
-              <li>KPI tracking from company disclosures</li>
-              <li>Data-quality monitoring and alerting</li>
               <li>Natural-language access to your warehouse</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service reveal">
-          <div><span class="num">04</span><h2>Operations &amp; investor relations</h2></div>
-          <div class="service-body">
-            <p>The middle and back office run on email, spreadsheets, and tribal knowledge. We automate the repetitive parts with human review built in, so your ops team spends time on exceptions — not on copying numbers.</p>
-            <ul class="examples">
-              <li>Reconciliation and trade-break triage</li>
-              <li>DDQ and RFP response drafting</li>
-              <li>Investor letter and report prep</li>
-              <li>Counterparty and fund-admin email handling</li>
-              <li>Onboarding and KYC document review</li>
-              <li>Internal knowledge assistant</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service reveal">
-          <div><span class="num">05</span><h2>Compliance, risk &amp; AI platform</h2></div>
-          <div class="service-body">
-            <p>Before AI scales across a firm, it needs rails. We help your technology and compliance teams stand up secure model access, evaluation, and monitoring — and build the compliance tools that benefit from AI themselves.</p>
-            <ul class="examples">
-              <li>Secure, logged internal LLM gateway</li>
-              <li>Evaluation suites on your own examples</li>
-              <li>E-comms surveillance triage</li>
-              <li>Restricted-list and MNPI checks</li>
-              <li>AI usage policy and controls</li>
-              <li>Vendor and model risk assessment</li>
             </ul>
           </div>
         </div>
@@ -137,41 +106,25 @@
 
     <section class="rule-top" id="engagements">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Engagement models</p>
-          <h2>Start small. Prove it. Expand.</h2>
-          <p class="lede">Scoped, fixed-fee engagements with clear outcomes. Pricing depends on scope — we'll give you a number on the first call.</p>
+        <div class="section-head">
+          <h2>How engagements work</h2>
+          <p class="lede">Fixed fee for the diagnostic and the pilot, agreed before we start. We'll give you a number on the first call.</p>
         </div>
-        <div class="models reveal">
+        <div class="models">
           <div class="model">
-            <div class="dur">1–2 weeks</div>
-            <h3>Desk Diagnostic</h3>
-            <p>We sit with your team, map workflows, and deliver a ranked list of AI opportunities with a working prototype of the top one.</p>
-            <ul>
-              <li>Workflow shadowing</li>
-              <li>Opportunity map with ROI estimates</li>
-              <li>Prototype on your data</li>
-            </ul>
+            <div class="dur">2 weeks</div>
+            <h3>Desk diagnostic</h3>
+            <p>We sit with your team, map what they read and when, and build a working prototype of the most useful agent on your data.</p>
           </div>
           <div class="model featured">
-            <div class="dur">6–10 weeks</div>
-            <h3>Deskside Build</h3>
-            <p>One or two engineers embedded with your team to take a workflow from idea to production tool the desk relies on.</p>
-            <ul>
-              <li>Production deployment in your environment</li>
-              <li>Evaluations and monitoring</li>
-              <li>Full code and documentation hand-off</li>
-            </ul>
+            <div class="dur">4–8 weeks</div>
+            <h3>Pilot</h3>
+            <p>One or two agents live on real coverage in your cloud, tested against your own past examples, with code and documentation handed over.</p>
           </div>
           <div class="model">
             <div class="dur">Monthly</div>
-            <h3>Embedded Retainer</h3>
-            <p>An ongoing forward-deployed engineer who works as part of your team, shipping new tools and maintaining existing ones.</p>
-            <ul>
-              <li>Dedicated engineer capacity</li>
-              <li>Roadmap set with your leadership</li>
-              <li>On-site or hybrid</li>
-            </ul>
+            <h3>Retainer</h3>
+            <p>A forward-deployed engineer who keeps building with your team: new agents, new strategy packs, and upkeep of the ones you have.</p>
           </div>
         </div>
       </div>
@@ -179,46 +132,45 @@
 
     <section class="rule-top">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Questions</p>
+        <div class="section-head">
           <h2>Common questions</h2>
         </div>
-        <div class="faq reveal">
+        <div class="faq">
           <details>
             <summary>What is a forward-deployed engineer?</summary>
-            <p>An engineer who works directly with the people using the software instead of from a distant backlog. They learn the workflow first-hand, build quickly, and adjust based on what they see at the desk. It's how the best AI products actually get adopted.</p>
+            <p>An engineer who works with the people using the software instead of from a distant backlog. They learn the workflow first-hand, build quickly and adjust to what they see at the desk.</p>
           </details>
           <details>
-            <summary>What's a proactive agent?</summary>
-            <p>An agent that runs on its own instead of waiting for someone to type a question. It starts from a schedule or an event, like a new filing, a data file, a limit breach, or an email. It does the first pass and brings the result to the right person. Anything with real consequences, like booking a fix or sending something outside the firm, waits for a human to approve it.</p>
+            <summary>Do our analysts have to learn a new tool?</summary>
+            <p>No. Briefs arrive by email, notes land in the system you already use, and numbers go into your Excel templates. If you use Slack, Teams or Symphony, alerts can go there too.</p>
           </details>
           <details>
             <summary>Where does our data go?</summary>
-            <p>Nowhere you haven't approved. We deploy inside your cloud account or on-prem, use model providers under enterprise terms with zero data retention where available, and can run open-weight models entirely in your environment when needed.</p>
+            <p>It stays in your cloud account or on-prem. Model calls go only to providers you approve, under terms that forbid training, with zero data retention where the provider offers it. We can also use your own provider accounts, or models hosted entirely in your environment. See <a href="security.html">Security</a> for the full terms.</p>
           </details>
           <details>
             <summary>Can you work with the data we already license?</summary>
-            <p>Yes, and that's usually where we start. We build inside your environment and within your vendor agreements. Your data never leaves your control, and we never pool or reuse one client's data for another.</p>
+            <p>Yes, and that's usually where we start. We build inside your environment and within your vendor agreements.</p>
           </details>
           <details>
             <summary>Do you share anything between clients?</summary>
-            <p>No. Code patterns and engineering experience carry over; your data, positions, prompts, and outputs do not. Everything we build for you is yours.</p>
+            <p>No. General engineering experience carries over; your data, positions, prompts and outputs do not.</p>
           </details>
           <details>
             <summary>Do you work on-site?</summary>
-            <p>Yes, when it helps. Most engagements are hybrid: in person for the first week of shadowing and key milestones, remote with daily contact the rest of the time.</p>
+            <p>Yes, when it helps. Most engagements are hybrid: in person for the first week and key milestones, remote with daily contact the rest of the time.</p>
           </details>
           <details>
             <summary>Which models and tools do you use?</summary>
-            <p>Whatever fits your constraints. We're model-agnostic and work across the major frontier and open-weight models, and we build on your existing stack — Python, your data warehouse, Excel, Bloomberg, your OMS — rather than replacing it.</p>
+            <p>Whatever fits your constraints. We work across the major frontier and open-weight models and build on your existing stack, such as Python, your data warehouse, Excel, Bloomberg and your OMS.</p>
           </details>
           <details>
             <summary>What happens when the engagement ends?</summary>
-            <p>You own everything: code, prompts, evaluation sets, and infrastructure. We document it and train your team to run it. If you'd like us to stay on, the retainer model covers that.</p>
+            <p>You keep the code, prompts, test sets and infrastructure, and we train your team to run them. Your data is returned and deleted, and we certify the deletion in writing. If you'd like us to stay on, the retainer covers that.</p>
           </details>
           <details>
             <summary>Will you sign an NDA?</summary>
-            <p>Of course — before the first substantive conversation. We're used to the confidentiality expectations of investment firms.</p>
+            <p>Yes, before the first substantive conversation.</p>
           </details>
         </div>
       </div>
@@ -226,13 +178,13 @@
 
     <section class="cta">
       <div class="container">
-        <div class="cta-box reveal">
+        <div class="cta-box">
           <div>
-            <p class="eyebrow">Next step</p>
-            <h2>Start with a 30-minute conversation.</h2>
+            <h2>Start with a 30-minute call.</h2>
+            <p class="cta-sub">Tell us your strategy and what your team reads each morning. We'll tell you which pack fits and what a pilot would cover.</p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="contact.html">Book an intro call <span class="arrow">→</span></a>
+            <a class="btn btn-primary" href="contact.html">Book a call <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -244,16 +196,15 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html"><img class="brand-mark" src="assets/logo-mark-dark.svg" alt="">Deskside</a>
-          <p style="margin-top:14px;max-width:26em">Private AI research agents for hedge funds and investment firms.</p>
+          <p class="footer-tag">Forward-deployed engineers for buy-side research desks.</p>
         </div>
         <div>
           <h4>Company</h4>
           <ul>
-            <li><a href="services.html">Solutions</a></li>
+            <li><a href="services.html">What we build</a></li>
+            <li><a href="security.html">Security</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
           </ul>
         </div>
         <div>
@@ -261,6 +212,7 @@
           <ul>
             <li><a href="mailto:hello@desksidelabs.com">hello@desksidelabs.com</a></li>
             <li>New York, NY</li>
+            <li><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></li>
           </ul>
         </div>
       </div>
