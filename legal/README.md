@@ -7,6 +7,8 @@
 | `../privacy.html` | Website privacy policy | Public, linked in the footer |
 | `../terms.html` | Website terms of use | Public, linked in the footer |
 | `master-services-agreement.md` | Client contract: MSA + SOW template + security exhibit + subprocessor list | Sent to clients after an NDA; not published |
+| `mutual-nda.md` | Short mutual NDA for first detailed conversations | Sent to prospects before any detailed discussion; not published |
+| `personal-trading-policy.md` | Personal trading, restricted list and MNPI policy (required by MSA 5.2) | Signed by both founders before the first engagement; shown to clients on request |
 
 ## Our privacy promise, in one place
 
@@ -26,7 +28,7 @@ These commitments appear in the MSA (Section 4) and in plain English in the priv
 
 ## Decisions to make before sending
 
-- **Entity details:** the LLC's state of formation, registered address, and signatory.
+- **Entity details:** entity type (the drafts say "Deskside LLC"; change everywhere if you form a corporation), state or province of formation, registered address, and signatory.
 - **Governing law and venue:** the drafts assume New York.
 - **Liability:** the general cap (12 months of fees) and the data/confidentiality supercap. Set the supercap at a level your insurance actually covers.
 - **Insurance:** tech E&O, cyber, and general liability limits. Funds commonly ask for $1–5M. Get quotes before promising amounts.
